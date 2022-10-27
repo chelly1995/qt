@@ -24,9 +24,9 @@ ChatServerForm::ChatServerForm(QWidget *parent) :
     QList<int> sizes;
     sizes << 120 << 500;
     ui->splitter->setSizes(sizes);
-
     chatServer = new QTcpServer(this);
     connect(chatServer, SIGNAL(newConnection( )), SLOT(clientConnect( )));
+
     if (!chatServer->listen(QHostAddress::Any, PORT_NUMBER)) {
         QMessageBox::critical(this, tr("Chatting Server"), \
                               tr("Unable to start the server: %1.") \
@@ -37,6 +37,8 @@ ChatServerForm::ChatServerForm(QWidget *parent) :
 
     fileServer = new QTcpServer(this);
     connect(fileServer, SIGNAL(newConnection()), SLOT(acceptConnection()));
+
+
     if (!fileServer->listen(QHostAddress::Any, PORT_NUMBER+1)) {
         QMessageBox::critical(this, tr("Chatting Server"), \
                               tr("Unable to start the server: %1.") \
@@ -151,7 +153,7 @@ void ChatServerForm::receiveData( )
         item->setText(3, clientNameHash[port]);
         item->setText(4, QString(data));
         item->setText(5, QDateTime::currentDateTime().toString());
-        item->setToolTip(4, QString(data));
+        item->setToolTip(4, QString(data));     // 마우스를 갖다대면 데이터를 볼 수 있음
         ui->messageTreeWidget->addTopLevelItem(item);
 
         for(int i = 0; i < ui->messageTreeWidget->columnCount(); i++)
@@ -192,7 +194,7 @@ void ChatServerForm::removeClient()
     }
 }
 
-void ChatServerForm::addClient(int id, QString name)
+void ChatServerForm::addClient(int id, QString name)    // clientform에서 시그널을 보내면 addClient 실행
 {
     QTreeWidgetItem* item = new QTreeWidgetItem(ui->clientTreeWidget);
     item->setText(0, "X");

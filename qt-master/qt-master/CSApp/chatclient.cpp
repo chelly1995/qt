@@ -76,7 +76,7 @@ ChatClient::ChatClient(QWidget *parent)
 
     // 종료 기능
     QPushButton* quitButton = new QPushButton("Log Out", this);
-    connect(quitButton, SIGNAL(clicked( )), qApp, SLOT(quit( )));
+    connect(quitButton, SIGNAL(clicked( )), this, SLOT(close( )));
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;
     buttonLayout->addWidget(fileButton);

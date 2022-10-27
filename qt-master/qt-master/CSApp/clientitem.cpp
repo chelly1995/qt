@@ -49,6 +49,6 @@ int ClientItem::id() const
 }
 
 // Define copy assignment operator.
-//bool ClientItem::operator==(const ClientItem &other) const {
-//    return (this->text(1) == other.text(1));
-//}
+bool ClientItem::operator==(const ClientItem &other) const {
+    return (this->text(1) == other.text(1));
+}

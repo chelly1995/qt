@@ -64,7 +64,6 @@ void ShopManagerForm::removeItem()
     if(item != nullptr) {
         shopList.remove(item->text(0).toInt());
         ui->treeWidget->takeTopLevelItem(ui->treeWidget->indexOfTopLevelItem(item));
-//        delete item;
         ui->treeWidget->update();
     }
 }
@@ -78,8 +77,6 @@ void ShopManagerForm::showContextMenu(const QPoint &pos)
 void ShopManagerForm::on_searchPushButton_clicked()     // search 버튼 클릭
 {
     ui->searchTreeWidget->clear();
-
-//    for(int i = 0; i < ui->treeWidget->columnCount(); i++)
 
     int i = ui->searchComboBox->currentIndex();
     auto flag = (i)? Qt::MatchCaseSensitive|Qt::MatchContains

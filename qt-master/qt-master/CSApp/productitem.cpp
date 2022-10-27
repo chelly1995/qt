@@ -18,7 +18,6 @@ ProductItem::ProductItem(int pid, QString productName, QString price, QString st
 QString ProductItem::getProductName() const
 {
     return text(1);
-
 }
 
 void ProductItem::setProductName(QString& productName)
