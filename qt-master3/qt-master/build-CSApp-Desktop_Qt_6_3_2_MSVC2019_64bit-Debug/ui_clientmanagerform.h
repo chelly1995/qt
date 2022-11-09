@@ -32,7 +32,7 @@ class Ui_ClientManagerForm
 {
 public:
     QHBoxLayout *horizontalLayout_2;
-    QTableView *tableView;
+    QTableView *clienttableView;
     QTreeWidget *treeWidget;
     QSplitter *splitter;
     QToolBox *toolBox;
@@ -68,10 +68,11 @@ public:
         ClientManagerForm->resize(660, 419);
         horizontalLayout_2 = new QHBoxLayout(ClientManagerForm);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        tableView = new QTableView(ClientManagerForm);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        clienttableView = new QTableView(ClientManagerForm);
+        clienttableView->setObjectName(QString::fromUtf8("clienttableView"));
+        clienttableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-        horizontalLayout_2->addWidget(tableView);
+        horizontalLayout_2->addWidget(clienttableView);
 
         treeWidget = new QTreeWidget(ClientManagerForm);
         treeWidget->setObjectName(QString::fromUtf8("treeWidget"));

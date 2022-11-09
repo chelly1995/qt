@@ -21,6 +21,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBox>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -60,6 +61,7 @@ public:
     QComboBox *searchComboBox;
     QLineEdit *searchLineEdit;
     QPushButton *searchPushButton;
+    QTableView *producttableView;
 
     void setupUi(QWidget *ProductManagerForm)
     {
@@ -82,7 +84,7 @@ public:
         toolBox->setAcceptDrops(false);
         inputPage = new QWidget();
         inputPage->setObjectName(QString::fromUtf8("inputPage"));
-        inputPage->setGeometry(QRect(0, 0, 346, 379));
+        inputPage->setGeometry(QRect(0, 0, 241, 379));
         verticalLayout_3 = new QVBoxLayout(inputPage);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout = new QVBoxLayout();
@@ -158,7 +160,7 @@ public:
         toolBox->addItem(inputPage, QString::fromUtf8("&Input"));
         searchPage = new QWidget();
         searchPage->setObjectName(QString::fromUtf8("searchPage"));
-        searchPage->setGeometry(QRect(0, 0, 346, 379));
+        searchPage->setGeometry(QRect(0, 0, 241, 379));
         verticalLayout_4 = new QVBoxLayout(searchPage);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_2 = new QVBoxLayout();
@@ -201,7 +203,12 @@ public:
         horizontalLayout_3->addWidget(splitter);
 
 
-        gridLayout->addLayout(horizontalLayout_3, 0, 0, 1, 1);
+        gridLayout->addLayout(horizontalLayout_3, 0, 1, 1, 1);
+
+        producttableView = new QTableView(ProductManagerForm);
+        producttableView->setObjectName(QString::fromUtf8("producttableView"));
+
+        gridLayout->addWidget(producttableView, 0, 0, 1, 1);
 
 #if QT_CONFIG(shortcut)
         PidLabel->setBuddy(PidLineEdit);

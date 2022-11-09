@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+   <item row="0" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QSplitter" name="splitter">
@@ -58,7 +58,7 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>346</width>
+           <width>241</width>
            <height>379</height>
           </rect>
          </property>
@@ -168,7 +168,7 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>346</width>
+           <width>241</width>
            <height>379</height>
           </rect>
          </property>
@@ -248,6 +248,9 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="0" column="0">
+    <widget class="QTableView" name="producttableView"/>
    </item>
   </layout>
  </widget>

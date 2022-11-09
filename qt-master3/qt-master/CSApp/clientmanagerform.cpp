@@ -27,9 +27,8 @@ ClientManagerForm::ClientManagerForm(QWidget *parent) :
     menu = new QMenu;
     menu->addAction(removeAction);      // 생성된 메뉴에 removeAction 추가
 
-
-    ui->treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->treeWidget, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
+    ui->clienttableView->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(ui->clienttableView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
 
     connect(ui->searchLineEdit, SIGNAL(returnPressed()),
             this, SLOT(on_searchPushButton_clicked()));
@@ -41,107 +40,119 @@ ClientManagerForm::ClientManagerForm(QWidget *parent) :
 ClientManagerForm::~ClientManagerForm()
 {
     delete ui;
-
-    QFile file("clientlist.txt");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-        return;
-
-    QTextStream out(&file);
-    for (const auto& v : clientList) {
-        ClientItem* c = v;
-        out << c->id() << ", " << c->getName() << ", ";
-        out << c->getPhoneNumber() << ", ";
-        out << c->getAddress() << "\n";
-
+    QSqlDatabase db = QSqlDatabase::database("clientConnection");
+    if(db.isOpen()) {
+        clientqueryModel->submitAll();
+        db.close();
+        QSqlDatabase::removeDatabase("clientConnection");
     }
-    file.close( );
-
 }
 
 int ClientManagerForm::makeId( )    // client ID 생성
 {
-    if(clientList.size( ) == 0) {   // clientList의 size가 0인 경우 100 반환
+    if(clientqueryModel->rowCount() == 0) {   // clientList의 size가 0인 경우 100 반환
         return 100;
     } else {
-        auto id = clientList.lastKey(); // clientList의 size가 0이 아닌 경우 clientList의 마지막key값을 id에 저장
-        return ++id;                    // id값을 하나씩 증가
+        auto id = clientqueryModel->data(clientqueryModel->index(clientqueryModel->rowCount()-1,0)).toInt(); // clientList의 size가 0이 아닌 경우 clientList의 마지막key값을 id에 저장
+        return ++id;
     }
 }
 
 void ClientManagerForm::removeItem()    // 아이템 삭제
 {
-    QTreeWidgetItem* item = ui->treeWidget->currentItem();  // treeWidget의 현재아이템을 item 변수에 저장
-    if(item != nullptr) {   // item 값이 존재할 경우
-        clientList.remove(item->text(0).toInt());
-        ui->treeWidget->takeTopLevelItem(ui->treeWidget->indexOfTopLevelItem(item));
 
-        ui->treeWidget->update();
+    QModelIndex index=ui->clienttableView->currentIndex();
+
+    if(index.isValid()){
+        clientqueryModel->removeRow(index.row());
+        clientqueryModel->select();
+        ui->clienttableView->resizeColumnsToContents();
+
     }
 }
 
 void ClientManagerForm::showContextMenu(const QPoint &pos)
 {
-    QPoint globalPos = ui->treeWidget->mapToGlobal(pos);
+    QPoint globalPos = ui->clienttableView->mapToGlobal(pos);
+    if(ui->clienttableView->indexAt(pos).isValid())
     menu->exec(globalPos);
+
 }
 
 void ClientManagerForm::on_searchPushButton_clicked()           // search 버튼 클릭 시
 {
     ui->searchTreeWidget->clear();
-//    for(int i = 0; i < ui->treeWidget->columnCount(); i++)
     int i = ui->searchComboBox->currentIndex();                 // searchComboBox의 현재 index값을 i에 저장
     auto flag = (i)? Qt::MatchCaseSensitive|Qt::MatchContains
                    : Qt::MatchCaseSensitive;
     {
-        auto items = ui->treeWidget->findItems(ui->searchLineEdit->text(), flag, i);
+        QModelIndexList indexes = clientqueryModel->match(clientqueryModel->index(0,i), Qt::EditRole, ui->searchLineEdit->text(),-1,Qt::MatchFlags(flag));
 
-        foreach(auto i, items) {
-            ClientItem* c = static_cast<ClientItem*>(i);
-            int id = c->id();
-            QString name = c->getName();
-            QString number = c->getPhoneNumber();
-            QString address = c->getAddress();
-            ClientItem* item = new ClientItem(id, name, number, address);
-            ui->searchTreeWidget->addTopLevelItem(item);
+        foreach(auto ix, indexes) {
+            //ClientItem* c = static_cast<ClientItem*>(i);
+            int id = clientqueryModel->data(ix.siblingAtColumn(0)).toInt();
+            QString name = clientqueryModel->data(ix.siblingAtColumn(1)).toString();
+            QString number = clientqueryModel->data(ix.siblingAtColumn(2)).toString();
+            QString address = clientqueryModel->data(ix.siblingAtColumn(3)).toString();
+            QStringList strings;
+            strings << QString::number(id) <<name<<number<<address;
+            new QTreeWidgetItem(ui->searchTreeWidget, strings);
+            for(int i = 0; i < ui->searchTreeWidget->columnCount(); i++)
+                ui->searchTreeWidget->resizeColumnToContents(i);
+
         }
     }
 }
 
 void ClientManagerForm::on_modifyPushButton_clicked()       // Modify 버튼 클릭 시
 {
-    QTreeWidgetItem* item = ui->treeWidget->currentItem();
-    if(item != nullptr) {
-        int key = item->text(0).toInt();
-        ClientItem* c = clientList[key];
-        QString name, number, address;
-        name = ui->nameLineEdit->text();
-        number = ui->phoneNumberLineEdit->text();
-        address = ui->addressLineEdit->text();
-        c->setName(name);
-        c->setPhoneNumber(number);
-        c->setAddress(address);
-        clientList[key] = c;
+    QModelIndex index = ui->clienttableView->currentIndex();
+
+    if(index.isValid()){
+       QString name, number, address;
+    int cid = ui->idLineEdit->text().toInt();
+    name = ui->nameLineEdit->text();
+    number = ui->phoneNumberLineEdit->text();
+    address = ui->addressLineEdit->text();
+
+
+    QSqlQuery query(clientqueryModel->database());
+    query.prepare(QString("UPDATE client SET clientname = ?, phonenum = ?, address = ? WHERE cid=?"));
+    query.bindValue(0, name);
+    query.bindValue(1, number);
+    query.bindValue(2, address);
+    query.bindValue(3, cid);
+    query.exec();
+
+
+    clientqueryModel->select();
+    ui->clienttableView->resizeColumnsToContents();
+
     }
+
 }
 
 void ClientManagerForm::on_addPushButton_clicked()      // add 버튼 클릭 시
 {
     QString name, number, address;
     int id = makeId( );
+    ui->idLineEdit->setText(QString::number(id));
     name = ui->nameLineEdit->text();
     number = ui->phoneNumberLineEdit->text();
     address = ui->addressLineEdit->text();
     if(name.length()) {
-        ClientItem* c = new ClientItem(id, name, number, address);
-        clientList.insert(id, c);
-        ui->treeWidget->addTopLevelItem(c);
+        QSqlQuery query(clientqueryModel->database());
+        query.prepare("INSERT INTO client VALUES (?, ?, ?, ?)");
+        query.bindValue(0,id);
+        query.bindValue(1,name);
+        query.bindValue(2, number);
+        query.bindValue(3,address);
+        query.exec();
+        clientqueryModel->select();
+        ui->clienttableView->resizeColumnsToContents();
 
         emit sendClientInfo(id, name);
     }
-
-    QSqlQuery query;
-    query.exec(QString("INSERT INTO client VALUES (%1, '%2', '%3','%4')").arg(id).arg(name).arg(number).arg(address));
-    queryModel->select();
 }
 
 
@@ -155,44 +166,35 @@ void ClientManagerForm::on_treeWidget_itemClicked(QTreeWidgetItem *item, int col
     ui->addressLineEdit->setText(item->text(3));
 }
 
+
 void ClientManagerForm::loadData()
 {
-    QFile file("clientlist.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
 
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        QList<QString> row = line.split(", ");
-        if(row.size()) {
-            int id = row[0].toInt();
-            ClientItem* c = new ClientItem(id, row[1], row[2], row[3]);
-            ui->treeWidget->addTopLevelItem(c);
-            clientList.insert(id, c);
+    QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE","clientConnection");
+    db.setDatabaseName("client.db");
+    if(db.open()){
 
-           emit sendClientInfo(id, row[1]);
-        }
+        QSqlQuery query(db);
+        query.exec("CREATE TABLE IF NOT EXISTS client(cid INTEGER Primary Key,""clientname VARCHAR(20) NOT NULL, phonenum VARCHAR(20), address VARCHAR(20));");
+
+        clientqueryModel = new QSqlTableModel(this, db);
+        clientqueryModel->setTable("client");
+        clientqueryModel->select();
+        clientqueryModel->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+        clientqueryModel->setHeaderData(1,Qt::Horizontal, QObject::tr("Client name"));
+        clientqueryModel->setHeaderData(2, Qt::Horizontal, QObject::tr("Phone number"));
+        clientqueryModel->setHeaderData(3, Qt::Horizontal, QObject::tr("Address"));
+
+        ui->clienttableView->setModel(clientqueryModel);
+        ui->clienttableView->resizeColumnsToContents();
+     }
+        for(int i = 0; i < clientqueryModel->rowCount(); i++) {
+            int id = clientqueryModel->data(clientqueryModel->index(i, 0)).toInt();
+            QString name = clientqueryModel->data(clientqueryModel->index(i, 1)).toString();
+            //clientList.insert(id, clientModel->index(i, 0));
+            emit sendClientInfo(id, name);
     }
-
-
-    file.close( );
-
-    if(!createConnection()) return;
-
-    queryModel = new QSqlTableModel;
-    queryModel->setTable("client");
-    queryModel->select();
-
-    queryModel->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    queryModel->setHeaderData(1,Qt::Horizontal, QObject::tr("Client name"));
-    queryModel->setHeaderData(2, Qt::Horizontal, QObject::tr("Phone number"));
-    queryModel->setHeaderData(3, Qt::Horizontal, QObject::tr("Address"));
-
-    ui->tableView->setModel(queryModel);
-
 }
-
 
 
 void ClientManagerForm::clientCIDSended(int id) // CID를 통해 client정보 전달
@@ -208,14 +210,19 @@ void ClientManagerForm::clientCIDSended(int id) // CID를 통해 client정보 �
     emit sendClientInform(name,phonenumber,address);
 }
 
- bool ClientManagerForm::createConnection()
+
+void ClientManagerForm::on_clienttableView_clicked(const QModelIndex &index)
 {
-    QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("client.db");
-    if(!db.open()) return false;
+    QString id = clientqueryModel->data(index.siblingAtColumn(0)).toString();
+    QString name = clientqueryModel->data(index.siblingAtColumn(1)).toString();
+    QString phoneNumber = clientqueryModel->data(index.siblingAtColumn(2)).toString();
+    QString address = clientqueryModel->data(index.siblingAtColumn(3)).toString();
 
-    QSqlQuery query;
-    query.exec("CREATE TABLE IF NOT EXISTS client(id INTEGER Primary Key,""clientname VARCHAR(20) NOT NULL, phonenum VARCHAR(20), address VARCHAR(20));");
+    ui->idLineEdit->setText(id);
+    ui->nameLineEdit->setText(name);
+    ui->phoneNumberLineEdit->setText(phoneNumber);
+    ui->addressLineEdit->setText(address);
+    ui->toolBox->setCurrentIndex(0);
 
-    return true;
 }
+

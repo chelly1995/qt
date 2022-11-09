@@ -33,6 +33,7 @@ private slots:
 
 
 
+    void on_clienttableView_clicked(const QModelIndex &index);
 
 signals:
     void sendClientInfo(int, QString);
@@ -44,7 +45,7 @@ private:
     QMap<int, ClientItem*> clientList;
     Ui::ClientManagerForm *ui;
     QMenu* menu;
-    QSqlTableModel *queryModel;
+    QSqlTableModel *clientqueryModel;
 };
 
 #endif // CLIENTMANAGERFORM_H

@@ -4,6 +4,12 @@
 
 #include <QFile>
 #include <QMenu>
+#include <QTableView>
+#include <QSqlTableModel>
+#include <QSqlQueryModel>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 
 ProductManagerForm::ProductManagerForm(QWidget *parent) :
     QWidget(parent),
@@ -21,6 +27,8 @@ ProductManagerForm::ProductManagerForm(QWidget *parent) :
 
     menu = new QMenu;
     menu->addAction(removeAction);
+
+
     ui->treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->treeWidget, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showContextMenu(QPoint)));
 
@@ -70,7 +78,7 @@ void ProductManagerForm::removeItem()
 
 void ProductManagerForm::showContextMenu(const QPoint &pos)
 {
-    QPoint globalPos = ui->treeWidget->mapToGlobal(pos);
+    QPoint globalPos = ui->producttableView->mapToGlobal(pos);
     menu->exec(globalPos);
 }
 
@@ -127,6 +135,10 @@ void ProductManagerForm::on_addPushButton_clicked()
 
         emit sendProductInfo(id, productName);
     }
+
+    QSqlQuery query;
+    query.exec(QString("INSERT INTO product VALUES (%1, '%2', '%3','%4')").arg(id).arg(productName).arg(price).arg(quantity));
+    productqueryModel->select();
 }
 
 void ProductManagerForm::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
@@ -159,6 +171,19 @@ void ProductManagerForm::loadData()
         }
     }
     file.close( );
+
+    if(!createConnection()) return;
+
+    productqueryModel = new QSqlTableModel;
+    productqueryModel->setTable("product");
+    productqueryModel->select();
+
+    productqueryModel->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    productqueryModel->setHeaderData(1,Qt::Horizontal, QObject::tr("Product name"));
+    productqueryModel->setHeaderData(2, Qt::Horizontal, QObject::tr("Price"));
+    productqueryModel->setHeaderData(3, Qt::Horizontal, QObject::tr("Stock"));
+
+    ui->producttableView->setModel(productqueryModel);
 }
 
 void ProductManagerForm::productPIDSended(int id)
@@ -169,9 +194,18 @@ void ProductManagerForm::productPIDSended(int id)
     QString price = p->getPrice();
     QString stock = p->getStock();
 
-    qDebug() << productname;
-    qDebug() << price;
 
     emit sendProductInform(productname,price,stock);
 }
 
+bool ProductManagerForm::createConnection()
+{
+    QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("product.db");
+    if(!db.open()) return false;
+
+    QSqlQuery query;
+    query.exec("CREATE TABLE IF NOT EXISTS product(pid INTEGER Primary Key,""productname VARCHAR(20) NOT NULL, price VARCHAR(20), stock VARCHAR(20));");
+
+    return true;
+}

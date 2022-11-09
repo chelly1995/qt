@@ -22,7 +22,7 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ClientManagerForm_t {
-    uint offsetsAndSizes[28];
+    uint offsetsAndSizes[34];
     char stringdata0[18];
     char stringdata1[15];
     char stringdata2[1];
@@ -37,6 +37,9 @@ struct qt_meta_stringdata_ClientManagerForm_t {
     char stringdata11[28];
     char stringdata12[28];
     char stringdata13[16];
+    char stringdata14[27];
+    char stringdata15[12];
+    char stringdata16[6];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ClientManagerForm_t::offsetsAndSizes) + ofs), len 
@@ -55,7 +58,10 @@ static const qt_meta_stringdata_ClientManagerForm_t qt_meta_stringdata_ClientMan
         QT_MOC_LITERAL(133, 24),  // "on_addPushButton_clicked"
         QT_MOC_LITERAL(158, 27),  // "on_modifyPushButton_clicked"
         QT_MOC_LITERAL(186, 27),  // "on_searchPushButton_clicked"
-        QT_MOC_LITERAL(214, 15)   // "clientCIDSended"
+        QT_MOC_LITERAL(214, 15),  // "clientCIDSended"
+        QT_MOC_LITERAL(230, 26),  // "on_clienttableView_clicked"
+        QT_MOC_LITERAL(257, 11),  // "QModelIndex"
+        QT_MOC_LITERAL(269, 5)   // "index"
     },
     "ClientManagerForm",
     "sendClientInfo",
@@ -70,7 +76,10 @@ static const qt_meta_stringdata_ClientManagerForm_t qt_meta_stringdata_ClientMan
     "on_addPushButton_clicked",
     "on_modifyPushButton_clicked",
     "on_searchPushButton_clicked",
-    "clientCIDSended"
+    "clientCIDSended",
+    "on_clienttableView_clicked",
+    "QModelIndex",
+    "index"
 };
 #undef QT_MOC_LITERAL
 
@@ -80,7 +89,7 @@ static const uint qt_meta_data_ClientManagerForm[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -88,17 +97,18 @@ static const uint qt_meta_data_ClientManagerForm[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,   68,    2, 0x06,    1 /* Public */,
-       3,    3,   73,    2, 0x06,    4 /* Public */,
+       1,    2,   74,    2, 0x06,    1 /* Public */,
+       3,    3,   79,    2, 0x06,    4 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    2,   80,    2, 0x08,    8 /* Private */,
-       8,    1,   85,    2, 0x08,   11 /* Private */,
-       9,    0,   88,    2, 0x08,   13 /* Private */,
-      10,    0,   89,    2, 0x08,   14 /* Private */,
-      11,    0,   90,    2, 0x08,   15 /* Private */,
-      12,    0,   91,    2, 0x08,   16 /* Private */,
-      13,    1,   92,    2, 0x08,   17 /* Private */,
+       4,    2,   86,    2, 0x08,    8 /* Private */,
+       8,    1,   91,    2, 0x08,   11 /* Private */,
+       9,    0,   94,    2, 0x08,   13 /* Private */,
+      10,    0,   95,    2, 0x08,   14 /* Private */,
+      11,    0,   96,    2, 0x08,   15 /* Private */,
+      12,    0,   97,    2, 0x08,   16 /* Private */,
+      13,    1,   98,    2, 0x08,   17 /* Private */,
+      14,    1,  101,    2, 0x08,   19 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
@@ -112,6 +122,7 @@ static const uint qt_meta_data_ClientManagerForm[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 15,   16,
 
        0        // eod
 };
@@ -131,6 +142,7 @@ void ClientManagerForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 6: _t->on_modifyPushButton_clicked(); break;
         case 7: _t->on_searchPushButton_clicked(); break;
         case 8: _t->clientCIDSended((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 9: _t->on_clienttableView_clicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -160,7 +172,7 @@ const QMetaObject ClientManagerForm::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_ClientManagerForm_t
 , QtPrivate::TypeAndForceComplete<ClientManagerForm, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QTreeWidgetItem *, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QTreeWidgetItem *, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QModelIndex &, std::false_type>
 
 
 >,
@@ -187,13 +199,13 @@ int ClientManagerForm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

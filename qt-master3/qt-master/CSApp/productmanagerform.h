@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QHash>
+#include <QSqlTableModel>
 
 #include "productitem.h"
 
@@ -21,6 +22,7 @@ public:
     explicit ProductManagerForm(QWidget *parent = nullptr);
     ~ProductManagerForm();
     void loadData();
+    static bool createConnection();
 
 private slots:
     /* QTreeWidget을 위한 슬롯 */
@@ -44,6 +46,7 @@ private:
      QMap<int, ProductItem*> productList;
      Ui::ProductManagerForm *ui;
      QMenu* menu;
+     QSqlTableModel *productqueryModel;
 
 };
 

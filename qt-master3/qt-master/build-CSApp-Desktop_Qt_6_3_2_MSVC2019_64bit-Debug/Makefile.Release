@@ -939,6 +939,14 @@ release\moc_productmanagerform.cpp: ..\CSApp\productmanagerform.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QTransform \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnativeinterface.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QHash \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlTableModel \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqltablemodel.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qtsql-config.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qtsqlexports.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqldatabase.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlquerymodel.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qabstractitemmodel.h \
 		..\CSApp\productitem.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QTreeWidgetItem \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtreewidget.h \
@@ -946,7 +954,6 @@ release\moc_productmanagerform.cpp: ..\CSApp\productmanagerform.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractitemview.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qframe.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qitemselectionmodel.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractitemdelegate.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qstyleoption.h \
@@ -2677,6 +2684,14 @@ release\productmanagerform.obj: ..\CSApp\productmanagerform.cpp ..\CSApp\product
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QTransform \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnativeinterface.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QHash \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlTableModel \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqltablemodel.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qtsqlglobal.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qtsql-config.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qtsqlexports.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqldatabase.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlquerymodel.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qabstractitemmodel.h \
 		..\CSApp\productitem.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QTreeWidgetItem \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtreewidget.h \
@@ -2684,7 +2699,6 @@ release\productmanagerform.obj: ..\CSApp\productmanagerform.cpp ..\CSApp\product
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractitemview.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qframe.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qabstractitemmodel.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qitemselectionmodel.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractitemdelegate.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qstyleoption.h \
@@ -2704,7 +2718,15 @@ release\productmanagerform.obj: ..\CSApp\productmanagerform.cpp ..\CSApp\product
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qfile.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qfiledevice.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QMenu \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qmenu.h
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qmenu.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QTableView \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtableview.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlQueryModel \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlDatabase \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlError \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlerror.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlQuery \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlquery.h
 
 release\shopitem.obj: ..\CSApp\shopitem.cpp ..\CSApp\shopitem.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QTreeWidgetItem \

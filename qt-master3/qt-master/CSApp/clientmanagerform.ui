@@ -15,7 +15,11 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout_2">
    <item>
-    <widget class="QTableView" name="tableView"/>
+    <widget class="QTableView" name="clienttableView">
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QTreeWidget" name="treeWidget">
