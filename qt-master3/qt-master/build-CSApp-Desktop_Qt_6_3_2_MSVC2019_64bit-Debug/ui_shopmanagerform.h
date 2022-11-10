@@ -13,13 +13,13 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSplitter>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBox>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -30,9 +30,9 @@ QT_BEGIN_NAMESPACE
 class Ui_ShopManagerForm
 {
 public:
-    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout_3;
+    QTableView *shoptableView;
     QSplitter *splitter;
-    QTreeWidget *treeWidget;
     QToolBox *toolBox;
     QWidget *inputPage;
     QVBoxLayout *verticalLayout_2;
@@ -69,19 +69,21 @@ public:
         if (ShopManagerForm->objectName().isEmpty())
             ShopManagerForm->setObjectName(QString::fromUtf8("ShopManagerForm"));
         ShopManagerForm->resize(701, 451);
-        gridLayout = new QGridLayout(ShopManagerForm);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        horizontalLayout_3 = new QHBoxLayout(ShopManagerForm);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        shoptableView = new QTableView(ShopManagerForm);
+        shoptableView->setObjectName(QString::fromUtf8("shoptableView"));
+
+        horizontalLayout_3->addWidget(shoptableView);
+
         splitter = new QSplitter(ShopManagerForm);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setOrientation(Qt::Horizontal);
-        treeWidget = new QTreeWidget(splitter);
-        treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
-        splitter->addWidget(treeWidget);
         toolBox = new QToolBox(splitter);
         toolBox->setObjectName(QString::fromUtf8("toolBox"));
         inputPage = new QWidget();
         inputPage->setObjectName(QString::fromUtf8("inputPage"));
-        inputPage->setGeometry(QRect(0, 0, 352, 391));
+        inputPage->setGeometry(QRect(0, 0, 342, 391));
         verticalLayout_2 = new QVBoxLayout(inputPage);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         formLayout = new QFormLayout();
@@ -185,7 +187,7 @@ public:
         toolBox->addItem(inputPage, QString::fromUtf8("&Input"));
         searchPage = new QWidget();
         searchPage->setObjectName(QString::fromUtf8("searchPage"));
-        searchPage->setGeometry(QRect(0, 0, 352, 391));
+        searchPage->setGeometry(QRect(0, 0, 342, 391));
         verticalLayout_4 = new QVBoxLayout(searchPage);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_3 = new QVBoxLayout();
@@ -226,7 +228,7 @@ public:
         toolBox->addItem(searchPage, QString::fromUtf8("&Search"));
         splitter->addWidget(toolBox);
 
-        gridLayout->addWidget(splitter, 1, 0, 1, 1);
+        horizontalLayout_3->addWidget(splitter);
 
 #if QT_CONFIG(shortcut)
         sidLabel->setBuddy(sidLineEdit);
@@ -248,36 +250,29 @@ public:
     void retranslateUi(QWidget *ShopManagerForm)
     {
         ShopManagerForm->setWindowTitle(QCoreApplication::translate("ShopManagerForm", "Form", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(5, QCoreApplication::translate("ShopManagerForm", "Total", nullptr));
-        ___qtreewidgetitem->setText(4, QCoreApplication::translate("ShopManagerForm", "Quantity", nullptr));
-        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ShopManagerForm", "Price", nullptr));
-        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ShopManagerForm", "ClientName", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ShopManagerForm", "SID", nullptr));
         sidLabel->setText(QCoreApplication::translate("ShopManagerForm", "S&ID", nullptr));
         clientnameLabel->setText(QCoreApplication::translate("ShopManagerForm", "&ClientName", nullptr));
         ProductNameLabel->setText(QCoreApplication::translate("ShopManagerForm", "&ProductName", nullptr));
         quantityLabel->setText(QCoreApplication::translate("ShopManagerForm", "&Quantity", nullptr));
         PriceLabel->setText(QCoreApplication::translate("ShopManagerForm", "&Price", nullptr));
         totalLabel->setText(QCoreApplication::translate("ShopManagerForm", "&Total", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem1 = clienttreeWidget->headerItem();
-        ___qtreewidgetitem1->setText(2, QCoreApplication::translate("ShopManagerForm", "Address", nullptr));
-        ___qtreewidgetitem1->setText(1, QCoreApplication::translate("ShopManagerForm", "PhoneNumber", nullptr));
-        ___qtreewidgetitem1->setText(0, QCoreApplication::translate("ShopManagerForm", "ClinetName", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem2 = producttreeWidget->headerItem();
-        ___qtreewidgetitem2->setText(2, QCoreApplication::translate("ShopManagerForm", "Stock", nullptr));
-        ___qtreewidgetitem2->setText(1, QCoreApplication::translate("ShopManagerForm", "Price", nullptr));
-        ___qtreewidgetitem2->setText(0, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem = clienttreeWidget->headerItem();
+        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ShopManagerForm", "Address", nullptr));
+        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ShopManagerForm", "PhoneNumber", nullptr));
+        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ShopManagerForm", "ClinetName", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem1 = producttreeWidget->headerItem();
+        ___qtreewidgetitem1->setText(2, QCoreApplication::translate("ShopManagerForm", "Stock", nullptr));
+        ___qtreewidgetitem1->setText(1, QCoreApplication::translate("ShopManagerForm", "Price", nullptr));
+        ___qtreewidgetitem1->setText(0, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));
         addPushButton->setText(QCoreApplication::translate("ShopManagerForm", "&Add", nullptr));
         modifyPushButton->setText(QCoreApplication::translate("ShopManagerForm", "&Modify", nullptr));
         toolBox->setItemText(toolBox->indexOf(inputPage), QCoreApplication::translate("ShopManagerForm", "&Input", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem3 = searchTreeWidget->headerItem();
-        ___qtreewidgetitem3->setText(4, QCoreApplication::translate("ShopManagerForm", "Quantity", nullptr));
-        ___qtreewidgetitem3->setText(3, QCoreApplication::translate("ShopManagerForm", "Price", nullptr));
-        ___qtreewidgetitem3->setText(2, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));
-        ___qtreewidgetitem3->setText(1, QCoreApplication::translate("ShopManagerForm", "ClientName", nullptr));
-        ___qtreewidgetitem3->setText(0, QCoreApplication::translate("ShopManagerForm", "SID", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem2 = searchTreeWidget->headerItem();
+        ___qtreewidgetitem2->setText(4, QCoreApplication::translate("ShopManagerForm", "Quantity", nullptr));
+        ___qtreewidgetitem2->setText(3, QCoreApplication::translate("ShopManagerForm", "Price", nullptr));
+        ___qtreewidgetitem2->setText(2, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));
+        ___qtreewidgetitem2->setText(1, QCoreApplication::translate("ShopManagerForm", "ClientName", nullptr));
+        ___qtreewidgetitem2->setText(0, QCoreApplication::translate("ShopManagerForm", "SID", nullptr));
         searchComboBox->setItemText(0, QCoreApplication::translate("ShopManagerForm", "ID", nullptr));
         searchComboBox->setItemText(1, QCoreApplication::translate("ShopManagerForm", "ClientName", nullptr));
         searchComboBox->setItemText(2, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));

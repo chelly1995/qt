@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QHash>
+#include <QSqlTableModel>
 
 #include "shopitem.h"
 
@@ -25,7 +26,7 @@ public:
 
 private slots:
     /* QTreeWidget을 위한 슬롯 */
-    void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
+
     void showContextMenu(const QPoint &);
     void removeItem();              /* QAction을 위한 슬롯 */
     void on_addPushButton_clicked();
@@ -35,6 +36,8 @@ private slots:
     void on_ProductnameComboBox_textActivated(const QString &arg1);
 
     void on_quantityLineEdit_textChanged(const QString &arg1);
+
+    void on_shoptableView_clicked(const QModelIndex &index);
 
 public slots:
     void clientComboboxSended(int, QString);
@@ -55,7 +58,7 @@ private:
     QMap<int, ShopItem*> shopList;
     Ui::ShopManagerForm *ui;
     QMenu* menu;
-
+    QSqlTableModel *shopqueryModel;
 };
 
 #endif // SHOPMANAGERFORM_H

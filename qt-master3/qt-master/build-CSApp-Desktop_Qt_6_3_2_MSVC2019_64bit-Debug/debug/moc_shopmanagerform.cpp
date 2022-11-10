@@ -22,28 +22,27 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ShopManagerForm_t {
-    uint offsetsAndSizes[42];
+    uint offsetsAndSizes[40];
     char stringdata0[16];
     char stringdata1[4];
     char stringdata2[1];
     char stringdata3[15];
-    char stringdata4[26];
-    char stringdata5[17];
-    char stringdata6[5];
-    char stringdata7[7];
-    char stringdata8[16];
-    char stringdata9[11];
-    char stringdata10[25];
-    char stringdata11[28];
-    char stringdata12[28];
-    char stringdata13[37];
-    char stringdata14[5];
-    char stringdata15[32];
-    char stringdata16[21];
-    char stringdata17[22];
-    char stringdata18[19];
-    char stringdata19[20];
-    char stringdata20[36];
+    char stringdata4[16];
+    char stringdata5[11];
+    char stringdata6[25];
+    char stringdata7[28];
+    char stringdata8[28];
+    char stringdata9[37];
+    char stringdata10[5];
+    char stringdata11[32];
+    char stringdata12[25];
+    char stringdata13[12];
+    char stringdata14[6];
+    char stringdata15[21];
+    char stringdata16[22];
+    char stringdata17[19];
+    char stringdata18[20];
+    char stringdata19[36];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ShopManagerForm_t::offsetsAndSizes) + ofs), len 
@@ -53,32 +52,27 @@ static const qt_meta_stringdata_ShopManagerForm_t qt_meta_stringdata_ShopManager
         QT_MOC_LITERAL(16, 3),  // "CID"
         QT_MOC_LITERAL(20, 0),  // ""
         QT_MOC_LITERAL(21, 14),  // "sendProductPID"
-        QT_MOC_LITERAL(36, 25),  // "on_treeWidget_itemClicked"
-        QT_MOC_LITERAL(62, 16),  // "QTreeWidgetItem*"
-        QT_MOC_LITERAL(79, 4),  // "item"
-        QT_MOC_LITERAL(84, 6),  // "column"
-        QT_MOC_LITERAL(91, 15),  // "showContextMenu"
-        QT_MOC_LITERAL(107, 10),  // "removeItem"
-        QT_MOC_LITERAL(118, 24),  // "on_addPushButton_clicked"
-        QT_MOC_LITERAL(143, 27),  // "on_modifyPushButton_clicked"
-        QT_MOC_LITERAL(171, 27),  // "on_searchPushButton_clicked"
-        QT_MOC_LITERAL(199, 36),  // "on_ProductnameComboBox_textAc..."
-        QT_MOC_LITERAL(236, 4),  // "arg1"
-        QT_MOC_LITERAL(241, 31),  // "on_quantityLineEdit_textChanged"
-        QT_MOC_LITERAL(273, 20),  // "clientComboboxSended"
-        QT_MOC_LITERAL(294, 21),  // "productComboboxSended"
-        QT_MOC_LITERAL(316, 18),  // "ClientInformSended"
-        QT_MOC_LITERAL(335, 19),  // "ProductInformSended"
-        QT_MOC_LITERAL(355, 35)   // "on_ClientnameComboBox_textAct..."
+        QT_MOC_LITERAL(36, 15),  // "showContextMenu"
+        QT_MOC_LITERAL(52, 10),  // "removeItem"
+        QT_MOC_LITERAL(63, 24),  // "on_addPushButton_clicked"
+        QT_MOC_LITERAL(88, 27),  // "on_modifyPushButton_clicked"
+        QT_MOC_LITERAL(116, 27),  // "on_searchPushButton_clicked"
+        QT_MOC_LITERAL(144, 36),  // "on_ProductnameComboBox_textAc..."
+        QT_MOC_LITERAL(181, 4),  // "arg1"
+        QT_MOC_LITERAL(186, 31),  // "on_quantityLineEdit_textChanged"
+        QT_MOC_LITERAL(218, 24),  // "on_shoptableView_clicked"
+        QT_MOC_LITERAL(243, 11),  // "QModelIndex"
+        QT_MOC_LITERAL(255, 5),  // "index"
+        QT_MOC_LITERAL(261, 20),  // "clientComboboxSended"
+        QT_MOC_LITERAL(282, 21),  // "productComboboxSended"
+        QT_MOC_LITERAL(304, 18),  // "ClientInformSended"
+        QT_MOC_LITERAL(323, 19),  // "ProductInformSended"
+        QT_MOC_LITERAL(343, 35)   // "on_ClientnameComboBox_textAct..."
     },
     "ShopManagerForm",
     "CID",
     "",
     "sendProductPID",
-    "on_treeWidget_itemClicked",
-    "QTreeWidgetItem*",
-    "item",
-    "column",
     "showContextMenu",
     "removeItem",
     "on_addPushButton_clicked",
@@ -87,6 +81,9 @@ static const qt_meta_stringdata_ShopManagerForm_t qt_meta_stringdata_ShopManager
     "on_ProductnameComboBox_textActivated",
     "arg1",
     "on_quantityLineEdit_textChanged",
+    "on_shoptableView_clicked",
+    "QModelIndex",
+    "index",
     "clientComboboxSended",
     "productComboboxSended",
     "ClientInformSended",
@@ -113,38 +110,38 @@ static const uint qt_meta_data_ShopManagerForm[] = {
        3,    1,  107,    2, 0x06,    3 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    2,  110,    2, 0x08,    5 /* Private */,
-       8,    1,  115,    2, 0x08,    8 /* Private */,
-       9,    0,  118,    2, 0x08,   10 /* Private */,
-      10,    0,  119,    2, 0x08,   11 /* Private */,
-      11,    0,  120,    2, 0x08,   12 /* Private */,
-      12,    0,  121,    2, 0x08,   13 /* Private */,
-      13,    1,  122,    2, 0x08,   14 /* Private */,
-      15,    1,  125,    2, 0x08,   16 /* Private */,
-      16,    2,  128,    2, 0x0a,   18 /* Public */,
-      17,    2,  133,    2, 0x0a,   21 /* Public */,
-      18,    3,  138,    2, 0x0a,   24 /* Public */,
-      19,    3,  145,    2, 0x0a,   28 /* Public */,
-      20,    1,  152,    2, 0x0a,   32 /* Public */,
+       4,    1,  110,    2, 0x08,    5 /* Private */,
+       5,    0,  113,    2, 0x08,    7 /* Private */,
+       6,    0,  114,    2, 0x08,    8 /* Private */,
+       7,    0,  115,    2, 0x08,    9 /* Private */,
+       8,    0,  116,    2, 0x08,   10 /* Private */,
+       9,    1,  117,    2, 0x08,   11 /* Private */,
+      11,    1,  120,    2, 0x08,   13 /* Private */,
+      12,    1,  123,    2, 0x08,   15 /* Private */,
+      15,    2,  126,    2, 0x0a,   17 /* Public */,
+      16,    2,  131,    2, 0x0a,   20 /* Public */,
+      17,    3,  136,    2, 0x0a,   23 /* Public */,
+      18,    3,  143,    2, 0x0a,   27 /* Public */,
+      19,    1,  150,    2, 0x0a,   31 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 5, QMetaType::Int,    6,    7,
     QMetaType::Void, QMetaType::QPoint,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   14,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, 0x80000000 | 13,   14,
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    2,    2,    2,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    2,    2,    2,
-    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void, QMetaType::QString,   10,
 
        0        // eod
 };
@@ -157,14 +154,14 @@ void ShopManagerForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         switch (_id) {
         case 0: _t->CID((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 1: _t->sendProductPID((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 2: _t->on_treeWidget_itemClicked((*reinterpret_cast< std::add_pointer_t<QTreeWidgetItem*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 3: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
-        case 4: _t->removeItem(); break;
-        case 5: _t->on_addPushButton_clicked(); break;
-        case 6: _t->on_modifyPushButton_clicked(); break;
-        case 7: _t->on_searchPushButton_clicked(); break;
-        case 8: _t->on_ProductnameComboBox_textActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 9: _t->on_quantityLineEdit_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 3: _t->removeItem(); break;
+        case 4: _t->on_addPushButton_clicked(); break;
+        case 5: _t->on_modifyPushButton_clicked(); break;
+        case 6: _t->on_searchPushButton_clicked(); break;
+        case 7: _t->on_ProductnameComboBox_textActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 8: _t->on_quantityLineEdit_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 9: _t->on_shoptableView_clicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
         case 10: _t->clientComboboxSended((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 11: _t->productComboboxSended((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 12: _t->ClientInformSended((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
@@ -199,7 +196,7 @@ const QMetaObject ShopManagerForm::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_ShopManagerForm_t
 , QtPrivate::TypeAndForceComplete<ShopManagerForm, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QTreeWidgetItem *, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QModelIndex &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
 
 
 >,

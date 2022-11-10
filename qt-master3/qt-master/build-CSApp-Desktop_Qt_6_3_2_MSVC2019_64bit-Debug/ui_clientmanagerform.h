@@ -33,7 +33,6 @@ class Ui_ClientManagerForm
 public:
     QHBoxLayout *horizontalLayout_2;
     QTableView *clienttableView;
-    QTreeWidget *treeWidget;
     QSplitter *splitter;
     QToolBox *toolBox;
     QWidget *inputPage;
@@ -74,11 +73,6 @@ public:
 
         horizontalLayout_2->addWidget(clienttableView);
 
-        treeWidget = new QTreeWidget(ClientManagerForm);
-        treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
-
-        horizontalLayout_2->addWidget(treeWidget);
-
         splitter = new QSplitter(ClientManagerForm);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setOrientation(Qt::Horizontal);
@@ -86,7 +80,7 @@ public:
         toolBox->setObjectName(QString::fromUtf8("toolBox"));
         inputPage = new QWidget();
         inputPage->setObjectName(QString::fromUtf8("inputPage"));
-        inputPage->setGeometry(QRect(0, 0, 223, 359));
+        inputPage->setGeometry(QRect(0, 0, 322, 359));
         horizontalLayout_4 = new QHBoxLayout(inputPage);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         verticalLayout = new QVBoxLayout();
@@ -165,7 +159,7 @@ public:
         toolBox->addItem(inputPage, QString::fromUtf8("&Input"));
         searchPage = new QWidget();
         searchPage->setObjectName(QString::fromUtf8("searchPage"));
-        searchPage->setGeometry(QRect(0, 0, 223, 359));
+        searchPage->setGeometry(QRect(0, 0, 322, 359));
         horizontalLayout_3 = new QHBoxLayout(searchPage);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         verticalLayout_2 = new QVBoxLayout();
@@ -217,7 +211,7 @@ public:
 
         retranslateUi(ClientManagerForm);
 
-        toolBox->setCurrentIndex(1);
+        toolBox->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(ClientManagerForm);
@@ -226,11 +220,6 @@ public:
     void retranslateUi(QWidget *ClientManagerForm)
     {
         ClientManagerForm->setWindowTitle(QCoreApplication::translate("ClientManagerForm", "Form", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ClientManagerForm", "address", nullptr));
-        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ClientManagerForm", "phone num", nullptr));
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ClientManagerForm", "name", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ClientManagerForm", "id", nullptr));
         idLabel->setText(QCoreApplication::translate("ClientManagerForm", "I&D", nullptr));
         nameLabel->setText(QCoreApplication::translate("ClientManagerForm", "&Name", nullptr));
         PhoneNumberLabel->setText(QCoreApplication::translate("ClientManagerForm", "&Phone Number", nullptr));
@@ -238,11 +227,11 @@ public:
         addPushButton->setText(QCoreApplication::translate("ClientManagerForm", "&Add", nullptr));
         modifyPushButton->setText(QCoreApplication::translate("ClientManagerForm", "&Modify", nullptr));
         toolBox->setItemText(toolBox->indexOf(inputPage), QCoreApplication::translate("ClientManagerForm", "&Input", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem1 = searchTreeWidget->headerItem();
-        ___qtreewidgetitem1->setText(3, QCoreApplication::translate("ClientManagerForm", "Address", nullptr));
-        ___qtreewidgetitem1->setText(2, QCoreApplication::translate("ClientManagerForm", "Phone Number", nullptr));
-        ___qtreewidgetitem1->setText(1, QCoreApplication::translate("ClientManagerForm", "Name", nullptr));
-        ___qtreewidgetitem1->setText(0, QCoreApplication::translate("ClientManagerForm", "ID", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem = searchTreeWidget->headerItem();
+        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ClientManagerForm", "Address", nullptr));
+        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ClientManagerForm", "Phone Number", nullptr));
+        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ClientManagerForm", "Name", nullptr));
+        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ClientManagerForm", "ID", nullptr));
         searchComboBox->setItemText(0, QCoreApplication::translate("ClientManagerForm", "ID", nullptr));
         searchComboBox->setItemText(1, QCoreApplication::translate("ClientManagerForm", "Name", nullptr));
         searchComboBox->setItemText(2, QCoreApplication::translate("ClientManagerForm", "Phone Number", nullptr));

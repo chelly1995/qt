@@ -13,44 +13,15 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <item>
+    <widget class="QTableView" name="shoptableView"/>
+   </item>
+   <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QTreeWidget" name="treeWidget">
-      <column>
-       <property name="text">
-        <string>SID</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ClientName</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ProductName</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Price</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Quantity</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Total</string>
-       </property>
-      </column>
-     </widget>
      <widget class="QToolBox" name="toolBox">
       <property name="currentIndex">
        <number>0</number>
@@ -60,7 +31,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>352</width>
+         <width>342</width>
          <height>391</height>
         </rect>
        </property>
@@ -229,7 +200,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>352</width>
+         <width>342</width>
          <height>391</height>
         </rect>
        </property>

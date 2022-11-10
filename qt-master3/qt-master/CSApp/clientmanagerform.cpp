@@ -200,14 +200,19 @@ void ClientManagerForm::loadData()
 void ClientManagerForm::clientCIDSended(int id) // CID를 통해 client정보 전달
 {
 
-    ClientItem *c =clientList[id];
-    QString name = c->getName();
-    QString phonenumber = c->getPhoneNumber();
-    QString address = c->getAddress();
+//    ClientItem *c =clientList[id];
+//    QString name = c->getName();
+//    QString phonenumber = c->getPhoneNumber();
+//    QString address = c->getAddress();
 
+    QModelIndexList indexes = clientqueryModel->match(clientqueryModel->index(0, 0), Qt::EditRole, id, -1, Qt::MatchFlags(Qt::MatchCaseSensitive));
+    foreach(auto index, indexes){
+        QString name = clientqueryModel->data(index.siblingAtColumn(1)).toString();
+        QString phonenumber = clientqueryModel->data(index.siblingAtColumn(2)).toString();
+        QString address = clientqueryModel->data(index.siblingAtColumn(3)).toString();
 
-    qDebug() << name;
-    emit sendClientInform(name,phonenumber,address);
+       emit sendClientInform(name,phonenumber,address);
+    }
 }
 
 

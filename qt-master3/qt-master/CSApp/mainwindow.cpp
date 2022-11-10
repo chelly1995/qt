@@ -40,8 +40,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(productForm, SIGNAL(sendProductInform(QString,QString,QString)), shopForm, SLOT(ProductInformSended(QString,QString,QString)));
 
-
-
     connect(clientForm, SIGNAL(sendClientInfo(int,QString)),chatserverForm,SLOT(addClient(int, QString)));  // client이름을 ChatServer로 connect
 
     shopForm->loadData();
@@ -78,6 +76,6 @@ void MainWindow::on_actionChattingServer_triggered()
     chatclientForm = new ChatClient(this);
     chatclientForm->show();
 
-    qDebug()<<"HI";
+    //qDebug()<<"HI";
 }
 

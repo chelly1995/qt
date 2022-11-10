@@ -21,28 +21,6 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <widget class="QTreeWidget" name="treeWidget">
-        <column>
-         <property name="text">
-          <string>ID</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Product Name</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Price</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Stock</string>
-         </property>
-        </column>
-       </widget>
        <widget class="QToolBox" name="toolBox">
         <property name="mouseTracking">
          <bool>false</bool>
@@ -51,14 +29,14 @@
          <bool>false</bool>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="inputPage">
          <property name="geometry">
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>241</width>
+           <width>336</width>
            <height>379</height>
           </rect>
          </property>
@@ -106,12 +84,12 @@
                  <string>&amp;Price</string>
                 </property>
                 <property name="buddy">
-                 <cstring>PricelineEdit</cstring>
+                 <cstring>PriceLineEdit</cstring>
                 </property>
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QLineEdit" name="PricelineEdit"/>
+               <widget class="QLineEdit" name="PriceLineEdit"/>
               </item>
               <item row="3" column="0">
                <widget class="QLabel" name="stockLabel">
@@ -119,12 +97,12 @@
                  <string>&amp;Stock</string>
                 </property>
                 <property name="buddy">
-                 <cstring>quantitylineEdit</cstring>
+                 <cstring>stockLineEdit</cstring>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QLineEdit" name="quantitylineEdit"/>
+               <widget class="QLineEdit" name="stockLineEdit"/>
               </item>
              </layout>
             </item>
@@ -168,7 +146,7 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>241</width>
+           <width>336</width>
            <height>379</height>
           </rect>
          </property>

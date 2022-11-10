@@ -35,7 +35,6 @@ public:
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_3;
     QSplitter *splitter;
-    QTreeWidget *treeWidget;
     QToolBox *toolBox;
     QWidget *inputPage;
     QVBoxLayout *verticalLayout_3;
@@ -46,9 +45,9 @@ public:
     QLabel *ProductNameLabel;
     QLineEdit *nameLineEdit;
     QLabel *priceLabel;
-    QLineEdit *PricelineEdit;
+    QLineEdit *PriceLineEdit;
     QLabel *stockLabel;
-    QLineEdit *quantitylineEdit;
+    QLineEdit *stockLineEdit;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QPushButton *addPushButton;
@@ -75,16 +74,13 @@ public:
         splitter = new QSplitter(ProductManagerForm);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setOrientation(Qt::Horizontal);
-        treeWidget = new QTreeWidget(splitter);
-        treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
-        splitter->addWidget(treeWidget);
         toolBox = new QToolBox(splitter);
         toolBox->setObjectName(QString::fromUtf8("toolBox"));
         toolBox->setMouseTracking(false);
         toolBox->setAcceptDrops(false);
         inputPage = new QWidget();
         inputPage->setObjectName(QString::fromUtf8("inputPage"));
-        inputPage->setGeometry(QRect(0, 0, 241, 379));
+        inputPage->setGeometry(QRect(0, 0, 336, 379));
         verticalLayout_3 = new QVBoxLayout(inputPage);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout = new QVBoxLayout();
@@ -117,20 +113,20 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, priceLabel);
 
-        PricelineEdit = new QLineEdit(inputPage);
-        PricelineEdit->setObjectName(QString::fromUtf8("PricelineEdit"));
+        PriceLineEdit = new QLineEdit(inputPage);
+        PriceLineEdit->setObjectName(QString::fromUtf8("PriceLineEdit"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, PricelineEdit);
+        formLayout->setWidget(2, QFormLayout::FieldRole, PriceLineEdit);
 
         stockLabel = new QLabel(inputPage);
         stockLabel->setObjectName(QString::fromUtf8("stockLabel"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, stockLabel);
 
-        quantitylineEdit = new QLineEdit(inputPage);
-        quantitylineEdit->setObjectName(QString::fromUtf8("quantitylineEdit"));
+        stockLineEdit = new QLineEdit(inputPage);
+        stockLineEdit->setObjectName(QString::fromUtf8("stockLineEdit"));
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, quantitylineEdit);
+        formLayout->setWidget(3, QFormLayout::FieldRole, stockLineEdit);
 
 
         verticalLayout->addLayout(formLayout);
@@ -160,7 +156,7 @@ public:
         toolBox->addItem(inputPage, QString::fromUtf8("&Input"));
         searchPage = new QWidget();
         searchPage->setObjectName(QString::fromUtf8("searchPage"));
-        searchPage->setGeometry(QRect(0, 0, 241, 379));
+        searchPage->setGeometry(QRect(0, 0, 336, 379));
         verticalLayout_4 = new QVBoxLayout(searchPage);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_2 = new QVBoxLayout();
@@ -213,13 +209,13 @@ public:
 #if QT_CONFIG(shortcut)
         PidLabel->setBuddy(PidLineEdit);
         ProductNameLabel->setBuddy(nameLineEdit);
-        priceLabel->setBuddy(PricelineEdit);
-        stockLabel->setBuddy(quantitylineEdit);
+        priceLabel->setBuddy(PriceLineEdit);
+        stockLabel->setBuddy(stockLineEdit);
 #endif // QT_CONFIG(shortcut)
 
         retranslateUi(ProductManagerForm);
 
-        toolBox->setCurrentIndex(1);
+        toolBox->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(ProductManagerForm);
@@ -228,11 +224,6 @@ public:
     void retranslateUi(QWidget *ProductManagerForm)
     {
         ProductManagerForm->setWindowTitle(QCoreApplication::translate("ProductManagerForm", "Form", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ProductManagerForm", "Stock", nullptr));
-        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ProductManagerForm", "Price", nullptr));
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ProductManagerForm", "Product Name", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ProductManagerForm", "ID", nullptr));
         PidLabel->setText(QCoreApplication::translate("ProductManagerForm", "I&D", nullptr));
         ProductNameLabel->setText(QCoreApplication::translate("ProductManagerForm", "&ProductName", nullptr));
         priceLabel->setText(QCoreApplication::translate("ProductManagerForm", "&Price", nullptr));
@@ -240,11 +231,11 @@ public:
         addPushButton->setText(QCoreApplication::translate("ProductManagerForm", "&Add", nullptr));
         modifyPushButton->setText(QCoreApplication::translate("ProductManagerForm", "&Modify", nullptr));
         toolBox->setItemText(toolBox->indexOf(inputPage), QCoreApplication::translate("ProductManagerForm", "&Input", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem1 = searchTreeWidget->headerItem();
-        ___qtreewidgetitem1->setText(3, QCoreApplication::translate("ProductManagerForm", "Stock", nullptr));
-        ___qtreewidgetitem1->setText(2, QCoreApplication::translate("ProductManagerForm", "Price", nullptr));
-        ___qtreewidgetitem1->setText(1, QCoreApplication::translate("ProductManagerForm", "Product Name", nullptr));
-        ___qtreewidgetitem1->setText(0, QCoreApplication::translate("ProductManagerForm", "ID", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem = searchTreeWidget->headerItem();
+        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ProductManagerForm", "Stock", nullptr));
+        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ProductManagerForm", "Price", nullptr));
+        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ProductManagerForm", "Product Name", nullptr));
+        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ProductManagerForm", "ID", nullptr));
         searchComboBox->setItemText(0, QCoreApplication::translate("ProductManagerForm", "ID", nullptr));
         searchComboBox->setItemText(1, QCoreApplication::translate("ProductManagerForm", "Product Name", nullptr));
         searchComboBox->setItemText(2, QCoreApplication::translate("ProductManagerForm", "Price", nullptr));

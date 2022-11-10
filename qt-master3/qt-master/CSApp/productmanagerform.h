@@ -26,7 +26,7 @@ public:
 
 private slots:
     /* QTreeWidget을 위한 슬롯 */
-    void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
+//    void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
     void showContextMenu(const QPoint &);
     void removeItem();              /* QAction을 위한 슬롯 */
     void on_addPushButton_clicked();
@@ -35,6 +35,8 @@ private slots:
     void productPIDSended(int);
 
 
+
+    void on_producttableView_clicked(const QModelIndex &index);
 
 signals:
     void sendProductInfo(int, QString);
