@@ -36,7 +36,12 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionClientmanager"/>
+   <addaction name="actionProductmanager"/>
+   <addaction name="actionShopmanager"/>
+   <addaction name="separator"/>
    <addaction name="actionChattingServer"/>
+   <addaction name="actionChattingClient"/>
    <addaction name="separator"/>
    <addaction name="actionQuit"/>
   </widget>
@@ -55,14 +60,75 @@
     </property>
     <addaction name="actionQuit"/>
    </widget>
+   <widget class="QMenu" name="menuManage">
+    <property name="title">
+     <string>Manager</string>
+    </property>
+    <addaction name="actionClientmanager"/>
+    <addaction name="actionProductmanager"/>
+    <addaction name="actionShopmanager"/>
+   </widget>
+   <widget class="QMenu" name="menuChatting">
+    <property name="title">
+     <string>Chatting</string>
+    </property>
+    <addaction name="actionChattingClient"/>
+    <addaction name="actionChattingServer"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuManage"/>
+   <addaction name="menuChatting"/>
   </widget>
   <action name="actionQuit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Quit.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Quit.png</iconset>
+   </property>
    <property name="text">
     <string>Quit</string>
    </property>
   </action>
+  <action name="actionChattingClient">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingclient.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingclient.png</iconset>
+   </property>
+   <property name="text">
+    <string>ChattingClient</string>
+   </property>
+  </action>
+  <action name="actionClientmanager">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Client.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Client.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clientmanager</string>
+   </property>
+  </action>
+  <action name="actionProductmanager">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Product.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Product.png</iconset>
+   </property>
+   <property name="text">
+    <string>Productmanager</string>
+   </property>
+  </action>
+  <action name="actionShopmanager">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Shop.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Shop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Shopmanager</string>
+   </property>
+  </action>
   <action name="actionChattingServer">
+   <property name="icon">
+    <iconset>
+     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingserver.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingserver.png</iconset>
+   </property>
    <property name="text">
     <string>ChattingServer</string>
    </property>
@@ -81,8 +147,8 @@
      <y>-1</y>
     </hint>
     <hint type="destinationlabel">
-     <x>560</x>
-     <y>388</y>
+     <x>628</x>
+     <y>465</y>
     </hint>
    </hints>
   </connection>

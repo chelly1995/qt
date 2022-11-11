@@ -28,11 +28,11 @@ class Ui_ChatServerForm
 public:
     QGridLayout *gridLayout;
     QSplitter *splitter;
-    QWidget *layoutWidget;
+    QWidget *widget;
     QVBoxLayout *verticalLayout_2;
-    QLabel *clientListLabel;
+    QLabel *label;
     QTreeWidget *clientTreeWidget;
-    QWidget *layoutWidget1;
+    QWidget *widget1;
     QVBoxLayout *verticalLayout;
     QTreeWidget *messageTreeWidget;
     QHBoxLayout *horizontalLayout;
@@ -43,46 +43,46 @@ public:
     {
         if (ChatServerForm->objectName().isEmpty())
             ChatServerForm->setObjectName(QString::fromUtf8("ChatServerForm"));
-        ChatServerForm->resize(547, 403);
+        ChatServerForm->resize(634, 436);
         gridLayout = new QGridLayout(ChatServerForm);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         splitter = new QSplitter(ChatServerForm);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setOrientation(Qt::Horizontal);
-        layoutWidget = new QWidget(splitter);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget);
+        widget = new QWidget(splitter);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        verticalLayout_2 = new QVBoxLayout(widget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        clientListLabel = new QLabel(layoutWidget);
-        clientListLabel->setObjectName(QString::fromUtf8("clientListLabel"));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        verticalLayout_2->addWidget(clientListLabel);
+        verticalLayout_2->addWidget(label);
 
-        clientTreeWidget = new QTreeWidget(layoutWidget);
+        clientTreeWidget = new QTreeWidget(widget);
         clientTreeWidget->setObjectName(QString::fromUtf8("clientTreeWidget"));
 
         verticalLayout_2->addWidget(clientTreeWidget);
 
-        splitter->addWidget(layoutWidget);
-        layoutWidget1 = new QWidget(splitter);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        verticalLayout = new QVBoxLayout(layoutWidget1);
+        splitter->addWidget(widget);
+        widget1 = new QWidget(splitter);
+        widget1->setObjectName(QString::fromUtf8("widget1"));
+        verticalLayout = new QVBoxLayout(widget1);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        messageTreeWidget = new QTreeWidget(layoutWidget1);
+        messageTreeWidget = new QTreeWidget(widget1);
         messageTreeWidget->setObjectName(QString::fromUtf8("messageTreeWidget"));
 
         verticalLayout->addWidget(messageTreeWidget);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        clearPushButton = new QPushButton(layoutWidget1);
+        clearPushButton = new QPushButton(widget1);
         clearPushButton->setObjectName(QString::fromUtf8("clearPushButton"));
 
         horizontalLayout->addWidget(clearPushButton);
 
-        savePushButton = new QPushButton(layoutWidget1);
+        savePushButton = new QPushButton(widget1);
         savePushButton->setObjectName(QString::fromUtf8("savePushButton"));
 
         horizontalLayout->addWidget(savePushButton);
@@ -90,13 +90,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        splitter->addWidget(layoutWidget1);
+        splitter->addWidget(widget1);
 
         gridLayout->addWidget(splitter, 0, 0, 1, 1);
 
 
         retranslateUi(ChatServerForm);
-        QObject::connect(clearPushButton, &QPushButton::clicked, messageTreeWidget, qOverload<>(&QTreeWidget::clear));
 
         QMetaObject::connectSlotsByName(ChatServerForm);
     } // setupUi
@@ -104,7 +103,7 @@ public:
     void retranslateUi(QWidget *ChatServerForm)
     {
         ChatServerForm->setWindowTitle(QCoreApplication::translate("ChatServerForm", "Form", nullptr));
-        clientListLabel->setText(QCoreApplication::translate("ChatServerForm", "Client List", nullptr));
+        label->setText(QCoreApplication::translate("ChatServerForm", "Client List", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = clientTreeWidget->headerItem();
         ___qtreewidgetitem->setText(1, QCoreApplication::translate("ChatServerForm", "Name", nullptr));
         ___qtreewidgetitem->setText(0, QCoreApplication::translate("ChatServerForm", "Status", nullptr));
@@ -115,8 +114,8 @@ public:
         ___qtreewidgetitem1->setText(2, QCoreApplication::translate("ChatServerForm", "ID", nullptr));
         ___qtreewidgetitem1->setText(1, QCoreApplication::translate("ChatServerForm", "Port", nullptr));
         ___qtreewidgetitem1->setText(0, QCoreApplication::translate("ChatServerForm", "IP", nullptr));
-        clearPushButton->setText(QCoreApplication::translate("ChatServerForm", "&Clear", nullptr));
-        savePushButton->setText(QCoreApplication::translate("ChatServerForm", "&Save", nullptr));
+        clearPushButton->setText(QCoreApplication::translate("ChatServerForm", "Clear", nullptr));
+        savePushButton->setText(QCoreApplication::translate("ChatServerForm", "Save", nullptr));
     } // retranslateUi
 
 };

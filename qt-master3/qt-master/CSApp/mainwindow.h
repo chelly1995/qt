@@ -25,6 +25,15 @@ private slots:
 
     void on_actionQuit_triggered();
 
+
+    void on_actionChattingClient_triggered();
+
+    void on_actionClientmanager_triggered();
+
+    void on_actionProductmanager_triggered();
+
+    void on_actionShopmanager_triggered();
+
     void on_actionChattingServer_triggered();
 
 private:

@@ -58,7 +58,7 @@ public:
     QWidget *searchPage;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_3;
-    QTreeWidget *searchTreeWidget;
+    QTableView *searchTableView;
     QHBoxLayout *horizontalLayout_2;
     QComboBox *searchComboBox;
     QLineEdit *searchLineEdit;
@@ -73,6 +73,7 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         shoptableView = new QTableView(ShopManagerForm);
         shoptableView->setObjectName(QString::fromUtf8("shoptableView"));
+        shoptableView->verticalHeader()->setVisible(false);
 
         horizontalLayout_3->addWidget(shoptableView);
 
@@ -192,10 +193,11 @@ public:
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        searchTreeWidget = new QTreeWidget(searchPage);
-        searchTreeWidget->setObjectName(QString::fromUtf8("searchTreeWidget"));
+        searchTableView = new QTableView(searchPage);
+        searchTableView->setObjectName(QString::fromUtf8("searchTableView"));
+        searchTableView->verticalHeader()->setVisible(false);
 
-        verticalLayout_3->addWidget(searchTreeWidget);
+        verticalLayout_3->addWidget(searchTableView);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
@@ -241,7 +243,7 @@ public:
 
         retranslateUi(ShopManagerForm);
 
-        toolBox->setCurrentIndex(0);
+        toolBox->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(ShopManagerForm);
@@ -267,12 +269,6 @@ public:
         addPushButton->setText(QCoreApplication::translate("ShopManagerForm", "&Add", nullptr));
         modifyPushButton->setText(QCoreApplication::translate("ShopManagerForm", "&Modify", nullptr));
         toolBox->setItemText(toolBox->indexOf(inputPage), QCoreApplication::translate("ShopManagerForm", "&Input", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem2 = searchTreeWidget->headerItem();
-        ___qtreewidgetitem2->setText(4, QCoreApplication::translate("ShopManagerForm", "Quantity", nullptr));
-        ___qtreewidgetitem2->setText(3, QCoreApplication::translate("ShopManagerForm", "Price", nullptr));
-        ___qtreewidgetitem2->setText(2, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));
-        ___qtreewidgetitem2->setText(1, QCoreApplication::translate("ShopManagerForm", "ClientName", nullptr));
-        ___qtreewidgetitem2->setText(0, QCoreApplication::translate("ShopManagerForm", "SID", nullptr));
         searchComboBox->setItemText(0, QCoreApplication::translate("ShopManagerForm", "ID", nullptr));
         searchComboBox->setItemText(1, QCoreApplication::translate("ShopManagerForm", "ClientName", nullptr));
         searchComboBox->setItemText(2, QCoreApplication::translate("ShopManagerForm", "ProductName", nullptr));

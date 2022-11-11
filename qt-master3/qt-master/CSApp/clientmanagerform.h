@@ -7,6 +7,9 @@
 
 #include "clientitem.h"
 
+
+class QStandardItemModel;
+
 namespace Ui {
 class ClientManagerForm;
 }
@@ -46,6 +49,8 @@ private:
     Ui::ClientManagerForm *ui;
     QMenu* menu;
     QSqlTableModel *clientqueryModel;
+    QStandardItemModel *searchqueryModel;  // select 쿼리 모델
+
 };
 
 #endif // CLIENTMANAGERFORM_H

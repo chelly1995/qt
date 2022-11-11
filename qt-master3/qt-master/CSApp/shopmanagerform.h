@@ -9,6 +9,7 @@
 
 class QMenu;
 class QTreeWidgetItem;
+class QStandardItemModel;
 
 namespace Ui {
 class ShopManagerForm;
@@ -59,6 +60,8 @@ private:
     Ui::ShopManagerForm *ui;
     QMenu* menu;
     QSqlTableModel *shopqueryModel;
+    QStandardItemModel* searchqueryModel;
+
 };
 
 #endif // SHOPMANAGERFORM_H

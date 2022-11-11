@@ -10,6 +10,9 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QSqlRecord>
+#include <QStandardItemModel>
+#include <QMessageBox>
 
 ShopManagerForm::ShopManagerForm(QWidget *parent) :
     QWidget(parent),
@@ -31,6 +34,15 @@ ShopManagerForm::ShopManagerForm(QWidget *parent) :
 
     connect(ui->searchLineEdit, SIGNAL(returnPressed()),
             this, SLOT(on_searchPushButton_clicked()));
+
+    searchqueryModel = new QStandardItemModel(0, 6);
+    searchqueryModel->setHeaderData(0, Qt::Horizontal, tr("ID"));
+    searchqueryModel->setHeaderData(1, Qt::Horizontal, tr("Name"));
+    searchqueryModel->setHeaderData(2, Qt::Horizontal, tr("Product Name"));
+    searchqueryModel->setHeaderData(3, Qt::Horizontal, tr("Price"));
+    searchqueryModel->setHeaderData(4, Qt::Horizontal, tr("Quantity"));
+    searchqueryModel->setHeaderData(5, Qt::Horizontal, tr("TotalPrice"));
+    ui->searchTableView->setModel(searchqueryModel);
 
 }
 
@@ -79,7 +91,8 @@ void ShopManagerForm::showContextMenu(const QPoint &pos)
 
 void ShopManagerForm::on_searchPushButton_clicked()     // search 버튼 클릭
 {
-    ui->searchTreeWidget->clear();
+    searchqueryModel->clear();
+    //ui->searchTreeWidget->clear();
 
     int i = ui->searchComboBox->currentIndex();
     auto flag = (i)? Qt::MatchCaseSensitive|Qt::MatchContains
@@ -98,11 +111,20 @@ void ShopManagerForm::on_searchPushButton_clicked()     // search 버튼 클릭
 
             QStringList strings;
             strings << QString::number(id) << name << productname << price<<quantity<< QString::number(totalprice);
-            new QTreeWidgetItem(ui->searchTreeWidget,strings);
 
-            for(int i=0; i<ui->searchTreeWidget->columnCount(); i++)
-                ui->searchTreeWidget->resizeColumnToContents(i);
+            QList<QStandardItem *> items;
+            for (int i = 0; i < 4; ++i) {
+                items.append(new QStandardItem(strings.at(i)));
+            }
 
+            searchqueryModel->appendRow(items);
+            searchqueryModel->setHeaderData(0, Qt::Horizontal, tr("ID"));
+            searchqueryModel->setHeaderData(1, Qt::Horizontal, tr("Name"));
+            searchqueryModel->setHeaderData(2, Qt::Horizontal, tr("Product Name"));
+            searchqueryModel->setHeaderData(3, Qt::Horizontal, tr("Price"));
+            searchqueryModel->setHeaderData(4, Qt::Horizontal, tr("Quantity"));
+            searchqueryModel->setHeaderData(5, Qt::Horizontal, tr("TotalPrice"));
+            ui->searchTableView->resizeColumnsToContents();
         }
     }
 }

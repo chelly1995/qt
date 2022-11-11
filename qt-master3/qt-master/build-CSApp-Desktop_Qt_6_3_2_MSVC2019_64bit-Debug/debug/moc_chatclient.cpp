@@ -22,31 +22,43 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ChatClient_t {
-    uint offsetsAndSizes[12];
+    uint offsetsAndSizes[20];
     char stringdata0[11];
-    char stringdata1[16];
+    char stringdata1[12];
     char stringdata2[1];
-    char stringdata3[12];
-    char stringdata4[9];
-    char stringdata5[11];
+    char stringdata3[9];
+    char stringdata4[11];
+    char stringdata5[13];
+    char stringdata6[12];
+    char stringdata7[6];
+    char stringdata8[9];
+    char stringdata9[9];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ChatClient_t::offsetsAndSizes) + ofs), len 
 static const qt_meta_stringdata_ChatClient_t qt_meta_stringdata_ChatClient = {
     {
         QT_MOC_LITERAL(0, 10),  // "ChatClient"
-        QT_MOC_LITERAL(11, 15),  // "connectToServer"
-        QT_MOC_LITERAL(27, 0),  // ""
-        QT_MOC_LITERAL(28, 11),  // "receiveData"
-        QT_MOC_LITERAL(40, 8),  // "sendData"
-        QT_MOC_LITERAL(49, 10)   // "disconnect"
+        QT_MOC_LITERAL(11, 11),  // "receiveData"
+        QT_MOC_LITERAL(23, 0),  // ""
+        QT_MOC_LITERAL(24, 8),  // "sendData"
+        QT_MOC_LITERAL(33, 10),  // "disconnect"
+        QT_MOC_LITERAL(44, 12),  // "sendProtocol"
+        QT_MOC_LITERAL(57, 11),  // "Chat_Status"
+        QT_MOC_LITERAL(69, 5),  // "char*"
+        QT_MOC_LITERAL(75, 8),  // "sendFile"
+        QT_MOC_LITERAL(84, 8)   // "goOnSend"
     },
     "ChatClient",
-    "connectToServer",
-    "",
     "receiveData",
+    "",
     "sendData",
-    "disconnect"
+    "disconnect",
+    "sendProtocol",
+    "Chat_Status",
+    "char*",
+    "sendFile",
+    "goOnSend"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +68,7 @@ static const uint qt_meta_data_ChatClient[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,16 +76,22 @@ static const uint qt_meta_data_ChatClient[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x08,    1 /* Private */,
-       3,    0,   39,    2, 0x08,    2 /* Private */,
-       4,    0,   40,    2, 0x08,    3 /* Private */,
-       5,    0,   41,    2, 0x08,    4 /* Private */,
+       1,    0,   56,    2, 0x08,    1 /* Private */,
+       3,    0,   57,    2, 0x08,    2 /* Private */,
+       4,    0,   58,    2, 0x08,    3 /* Private */,
+       5,    3,   59,    2, 0x08,    4 /* Private */,
+       5,    2,   66,    2, 0x28,    8 /* Private | MethodCloned */,
+       8,    0,   71,    2, 0x08,   11 /* Private */,
+       9,    1,   72,    2, 0x08,   12 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6, 0x80000000 | 7, QMetaType::Int,    2,    2,    2,
+    QMetaType::Void, 0x80000000 | 6, 0x80000000 | 7,    2,    2,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::LongLong,    2,
 
        0        // eod
 };
@@ -84,14 +102,16 @@ void ChatClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<ChatClient *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->connectToServer(); break;
-        case 1: _t->receiveData(); break;
-        case 2: _t->sendData(); break;
-        case 3: _t->disconnect(); break;
+        case 0: _t->receiveData(); break;
+        case 1: _t->sendData(); break;
+        case 2: _t->disconnect(); break;
+        case 3: _t->sendProtocol((*reinterpret_cast< std::add_pointer_t<Chat_Status>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<char*>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
+        case 4: _t->sendProtocol((*reinterpret_cast< std::add_pointer_t<Chat_Status>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<char*>>(_a[2]))); break;
+        case 5: _t->sendFile(); break;
+        case 6: _t->goOnSend((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject ChatClient::staticMetaObject = { {
@@ -102,7 +122,7 @@ const QMetaObject ChatClient::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_ChatClient_t
 , QtPrivate::TypeAndForceComplete<ChatClient, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<Chat_Status, std::false_type>, QtPrivate::TypeAndForceComplete<char *, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<Chat_Status, std::false_type>, QtPrivate::TypeAndForceComplete<char *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<qint64, std::false_type>
 
 
 >,
@@ -129,13 +149,13 @@ int ChatClient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 7;
     }
     return _id;
 }

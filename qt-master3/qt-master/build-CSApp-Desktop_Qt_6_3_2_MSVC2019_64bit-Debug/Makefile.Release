@@ -222,10 +222,10 @@ compiler_moc_header_make_all: release\moc_chatclient.cpp release\moc_chatserverf
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_chatclient.cpp release\moc_chatserverform.cpp release\moc_clientmanagerform.cpp release\moc_mainwindow.cpp release\moc_productmanagerform.cpp release\moc_shopmanagerform.cpp
 release\moc_chatclient.cpp: ..\CSApp\chatclient.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QObject \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobject.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobjectdefs.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QWidget \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qwidget.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiglobal.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qglobal.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qconfig-bootstrapped.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qconfig.h \
@@ -248,8 +248,17 @@ release\moc_chatclient.cpp: ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qglobalstatic.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnumeric.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qversiontagging.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtgui-config.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiexports.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsexports.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnamespace.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qtmetamacros.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobject.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qstring.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qchar.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qstringview.h \
@@ -290,16 +299,6 @@ release\moc_chatclient.cpp: ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qmath.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobject_impl.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qbindingstorage.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QWidget \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qwidget.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiglobal.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtgui-config.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiexports.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsexports.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs_win.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qmargins.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qaction.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qkeysequence.h \
@@ -349,19 +348,19 @@ release\moc_chatclient.cpp: ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qinputdevice.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qscreen.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QList \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QObject \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QRect \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSize \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSizeF \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QTransform \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnativeinterface.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QDataStream \
-		..\CSApp\chatserverform.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QHash \
 		release\moc_predefs.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\bin\moc.exe
 	C:\Qt\6.3.2\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/release/moc_predefs.h -IC:/Qt/6.3.2/msvc2019_64/mkspecs/win32-msvc -IC:/Work/qt-master3/qt-master/CSApp -IC:/Qt/6.3.2/msvc2019_64/include -IC:/Qt/6.3.2/msvc2019_64/include/QtWidgets -IC:/Qt/6.3.2/msvc2019_64/include/QtGui -IC:/Qt/6.3.2/msvc2019_64/include/QtNetwork -IC:/Qt/6.3.2/msvc2019_64/include/QtSql -IC:/Qt/6.3.2/msvc2019_64/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" ..\CSApp\chatclient.h -o release\moc_chatclient.cpp
 
 release\moc_chatserverform.cpp: ..\CSApp\chatserverform.h \
+		..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QWidget \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qwidget.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -494,6 +493,7 @@ release\moc_chatserverform.cpp: ..\CSApp\chatserverform.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSizeF \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QTransform \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnativeinterface.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QDataStream \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QHash \
 		release\moc_predefs.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\bin\moc.exe
@@ -1179,10 +1179,10 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 release\chatclient.obj: ..\CSApp\chatclient.cpp ..\CSApp\chatclient.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QObject \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobject.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobjectdefs.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnamespace.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QWidget \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qwidget.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiglobal.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qglobal.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qconfig-bootstrapped.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qconfig.h \
@@ -1205,8 +1205,17 @@ release\chatclient.obj: ..\CSApp\chatclient.cpp ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qglobalstatic.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnumeric.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qversiontagging.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtgui-config.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiexports.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsexports.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobjectdefs.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnamespace.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qtmetamacros.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs_win.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobject.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qstring.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qchar.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qstringview.h \
@@ -1247,16 +1256,6 @@ release\chatclient.obj: ..\CSApp\chatclient.cpp ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qmath.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qobject_impl.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qbindingstorage.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QWidget \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qwidget.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiglobal.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtgui-config.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qtguiexports.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgets-config.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsexports.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qwindowdefs_win.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qmargins.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qaction.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qkeysequence.h \
@@ -1306,14 +1305,13 @@ release\chatclient.obj: ..\CSApp\chatclient.cpp ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qinputdevice.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qscreen.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QList \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QObject \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QRect \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSize \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSizeF \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QTransform \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnativeinterface.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QDataStream \
-		..\CSApp\chatserverform.h \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QHash \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QTextEdit \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtextedit.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qabstractscrollarea.h \
@@ -1370,9 +1368,22 @@ release\chatclient.obj: ..\CSApp\chatclient.cpp ..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qmessagebox.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qdialog.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSettings \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qsettings.h
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qsettings.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QFileDialog \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qfiledialog.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qdir.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qfile.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qfiledevice.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qfileinfo.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qdatetime.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qcalendar.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QFile \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QFileInfo \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QProgressDialog \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qprogressdialog.h
 
 release\chatserverform.obj: ..\CSApp\chatserverform.cpp ..\CSApp\chatserverform.h \
+		..\CSApp\chatclient.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QWidget \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qwidget.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qtwidgetsglobal.h \
@@ -1505,6 +1516,7 @@ release\chatserverform.obj: ..\CSApp\chatserverform.cpp ..\CSApp\chatserverform.
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QSizeF \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QTransform \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\qnativeinterface.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QDataStream \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QHash \
 		ui_chatserverform.h \
 		..\CSApp\logthread.h \
@@ -1901,7 +1913,14 @@ release\clientmanagerform.obj: ..\CSApp\clientmanagerform.cpp ..\CSApp\clientman
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlError \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlerror.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlQuery \
-		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlquery.h
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlquery.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\QStandardItemModel \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtGui\qstandarditemmodel.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\QMessageBox \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qmessagebox.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtWidgets\qdialog.h \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\QSqlRecord \
+		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtSql\qsqlrecord.h
 
 release\logthread.obj: ..\CSApp\logthread.cpp ..\CSApp\logthread.h \
 		..\..\..\..\Qt\6.3.2\msvc2019_64\include\QtCore\QThread \

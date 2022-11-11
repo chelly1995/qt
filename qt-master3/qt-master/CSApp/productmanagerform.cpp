@@ -10,6 +10,9 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QSqlRecord>
+#include <QStandardItemModel>
+#include <QMessageBox>
 
 ProductManagerForm::ProductManagerForm(QWidget *parent) :
     QWidget(parent),
@@ -34,6 +37,13 @@ ProductManagerForm::ProductManagerForm(QWidget *parent) :
 
     connect(ui->searchLineEdit, SIGNAL(returnPressed()),
             this, SLOT(on_searchPushButton_clicked()));
+
+    searchqueryModel = new QStandardItemModel(0, 4);
+    searchqueryModel->setHeaderData(0, Qt::Horizontal, tr("ID"));
+    searchqueryModel->setHeaderData(1, Qt::Horizontal, tr("Name"));
+    searchqueryModel->setHeaderData(2, Qt::Horizontal, tr("Phone Number"));
+    searchqueryModel->setHeaderData(3, Qt::Horizontal, tr("Address"));
+    ui->searchTableView->setModel(searchqueryModel);
 
 }
 
@@ -79,8 +89,8 @@ void ProductManagerForm::showContextMenu(const QPoint &pos)
 
 void ProductManagerForm::on_searchPushButton_clicked()
 {
-    ui->searchTreeWidget->clear();
-
+    //ui->searchTreeWidget->clear();
+    searchqueryModel->clear();
     int i = ui->searchComboBox->currentIndex();
     auto flag = (i)? Qt::MatchCaseSensitive|Qt::MatchContains
                    : Qt::MatchCaseSensitive;
@@ -95,10 +105,18 @@ void ProductManagerForm::on_searchPushButton_clicked()
             QString quantity = productqueryModel->data(ix.siblingAtColumn(3)).toString();
             QStringList strings;
             strings << QString::number(id) << productName<<price<<quantity;
-            new QTreeWidgetItem(ui->searchTreeWidget, strings);
 
-            for(int i=0; i<ui->searchTreeWidget->columnCount(); i++)
-                ui->searchTreeWidget->resizeColumnToContents(i);
+            QList<QStandardItem *> items;
+            for (int i = 0; i < 4; ++i) {
+                items.append(new QStandardItem(strings.at(i)));
+            }
+
+            searchqueryModel->appendRow(items);
+            searchqueryModel->setHeaderData(0, Qt::Horizontal, tr("ID"));
+            searchqueryModel->setHeaderData(1, Qt::Horizontal, tr("Product Name"));
+            searchqueryModel->setHeaderData(2, Qt::Horizontal, tr("Price"));
+            searchqueryModel->setHeaderData(3, Qt::Horizontal, tr("Stock"));
+            ui->searchTableView->resizeColumnsToContents();
         }
     }
 }
@@ -152,9 +170,6 @@ void ProductManagerForm::on_addPushButton_clicked()
         emit sendProductInfo(id, productName);
     }
 
-    //    QSqlQuery query;
-    //    query.exec(QString("INSERT INTO product VALUES (%1, '%2', '%3','%4')").arg(id).arg(productName).arg(price).arg(quantity));
-    //    productqueryModel->select();
 }
 
 

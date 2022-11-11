@@ -22,7 +22,6 @@
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBox>
-#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -54,7 +53,7 @@ public:
     QWidget *searchPage;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_2;
-    QTreeWidget *searchTreeWidget;
+    QTableView *searchTableView;
     QHBoxLayout *horizontalLayout;
     QComboBox *searchComboBox;
     QLineEdit *searchLineEdit;
@@ -70,6 +69,7 @@ public:
         clienttableView = new QTableView(ClientManagerForm);
         clienttableView->setObjectName(QString::fromUtf8("clienttableView"));
         clienttableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+        clienttableView->verticalHeader()->setVisible(false);
 
         horizontalLayout_2->addWidget(clienttableView);
 
@@ -164,10 +164,11 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        searchTreeWidget = new QTreeWidget(searchPage);
-        searchTreeWidget->setObjectName(QString::fromUtf8("searchTreeWidget"));
+        searchTableView = new QTableView(searchPage);
+        searchTableView->setObjectName(QString::fromUtf8("searchTableView"));
+        searchTableView->verticalHeader()->setVisible(false);
 
-        verticalLayout_2->addWidget(searchTreeWidget);
+        verticalLayout_2->addWidget(searchTableView);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -211,7 +212,7 @@ public:
 
         retranslateUi(ClientManagerForm);
 
-        toolBox->setCurrentIndex(0);
+        toolBox->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(ClientManagerForm);
@@ -227,11 +228,6 @@ public:
         addPushButton->setText(QCoreApplication::translate("ClientManagerForm", "&Add", nullptr));
         modifyPushButton->setText(QCoreApplication::translate("ClientManagerForm", "&Modify", nullptr));
         toolBox->setItemText(toolBox->indexOf(inputPage), QCoreApplication::translate("ClientManagerForm", "&Input", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem = searchTreeWidget->headerItem();
-        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ClientManagerForm", "Address", nullptr));
-        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ClientManagerForm", "Phone Number", nullptr));
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ClientManagerForm", "Name", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ClientManagerForm", "ID", nullptr));
         searchComboBox->setItemText(0, QCoreApplication::translate("ClientManagerForm", "ID", nullptr));
         searchComboBox->setItemText(1, QCoreApplication::translate("ClientManagerForm", "Name", nullptr));
         searchComboBox->setItemText(2, QCoreApplication::translate("ClientManagerForm", "Phone Number", nullptr));

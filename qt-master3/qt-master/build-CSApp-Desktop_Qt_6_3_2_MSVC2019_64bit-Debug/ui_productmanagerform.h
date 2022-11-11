@@ -23,7 +23,6 @@
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBox>
-#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -55,7 +54,7 @@ public:
     QWidget *searchPage;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_2;
-    QTreeWidget *searchTreeWidget;
+    QTableView *searchTableView;
     QHBoxLayout *horizontalLayout_2;
     QComboBox *searchComboBox;
     QLineEdit *searchLineEdit;
@@ -161,10 +160,11 @@ public:
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        searchTreeWidget = new QTreeWidget(searchPage);
-        searchTreeWidget->setObjectName(QString::fromUtf8("searchTreeWidget"));
+        searchTableView = new QTableView(searchPage);
+        searchTableView->setObjectName(QString::fromUtf8("searchTableView"));
+        searchTableView->verticalHeader()->setVisible(false);
 
-        verticalLayout_2->addWidget(searchTreeWidget);
+        verticalLayout_2->addWidget(searchTableView);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
@@ -203,6 +203,7 @@ public:
 
         producttableView = new QTableView(ProductManagerForm);
         producttableView->setObjectName(QString::fromUtf8("producttableView"));
+        producttableView->verticalHeader()->setVisible(false);
 
         gridLayout->addWidget(producttableView, 0, 0, 1, 1);
 
@@ -215,7 +216,7 @@ public:
 
         retranslateUi(ProductManagerForm);
 
-        toolBox->setCurrentIndex(0);
+        toolBox->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(ProductManagerForm);
@@ -231,11 +232,6 @@ public:
         addPushButton->setText(QCoreApplication::translate("ProductManagerForm", "&Add", nullptr));
         modifyPushButton->setText(QCoreApplication::translate("ProductManagerForm", "&Modify", nullptr));
         toolBox->setItemText(toolBox->indexOf(inputPage), QCoreApplication::translate("ProductManagerForm", "&Input", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem = searchTreeWidget->headerItem();
-        ___qtreewidgetitem->setText(3, QCoreApplication::translate("ProductManagerForm", "Stock", nullptr));
-        ___qtreewidgetitem->setText(2, QCoreApplication::translate("ProductManagerForm", "Price", nullptr));
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("ProductManagerForm", "Product Name", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("ProductManagerForm", "ID", nullptr));
         searchComboBox->setItemText(0, QCoreApplication::translate("ProductManagerForm", "ID", nullptr));
         searchComboBox->setItemText(1, QCoreApplication::translate("ProductManagerForm", "Product Name", nullptr));
         searchComboBox->setItemText(2, QCoreApplication::translate("ProductManagerForm", "Price", nullptr));

@@ -29,7 +29,7 @@
          <bool>false</bool>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="inputPage">
          <property name="geometry">
@@ -157,27 +157,10 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
-             <widget class="QTreeWidget" name="searchTreeWidget">
-              <column>
-               <property name="text">
-                <string>ID</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Product Name</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Price</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>Stock</string>
-               </property>
-              </column>
+             <widget class="QTableView" name="searchTableView">
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -228,7 +211,11 @@
     </layout>
    </item>
    <item row="0" column="0">
-    <widget class="QTableView" name="producttableView"/>
+    <widget class="QTableView" name="producttableView">
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -26,6 +26,10 @@ class Ui_MainWindow
 {
 public:
     QAction *actionQuit;
+    QAction *actionChattingClient;
+    QAction *actionClientmanager;
+    QAction *actionProductmanager;
+    QAction *actionShopmanager;
     QAction *actionChattingServer;
     QWidget *centralwidget;
     QMdiArea *mdiArea;
@@ -33,6 +37,8 @@ public:
     QToolBar *toolBar;
     QMenuBar *menubar;
     QMenu *menuFile;
+    QMenu *menuManage;
+    QMenu *menuChatting;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -41,8 +47,34 @@ public:
         MainWindow->resize(1258, 932);
         actionQuit = new QAction(MainWindow);
         actionQuit->setObjectName(QString::fromUtf8("actionQuit"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Quit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionQuit->setIcon(icon);
+        actionChattingClient = new QAction(MainWindow);
+        actionChattingClient->setObjectName(QString::fromUtf8("actionChattingClient"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingclient.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionChattingClient->setIcon(icon1);
+        actionClientmanager = new QAction(MainWindow);
+        actionClientmanager->setObjectName(QString::fromUtf8("actionClientmanager"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Client.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionClientmanager->setIcon(icon2);
+        actionProductmanager = new QAction(MainWindow);
+        actionProductmanager->setObjectName(QString::fromUtf8("actionProductmanager"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Product.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionProductmanager->setIcon(icon3);
+        actionShopmanager = new QAction(MainWindow);
+        actionShopmanager->setObjectName(QString::fromUtf8("actionShopmanager"));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Shop.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionShopmanager->setIcon(icon4);
         actionChattingServer = new QAction(MainWindow);
         actionChattingServer->setObjectName(QString::fromUtf8("actionChattingServer"));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingserver.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionChattingServer->setIcon(icon5);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         mdiArea = new QMdiArea(centralwidget);
@@ -60,13 +92,29 @@ public:
         menubar->setGeometry(QRect(0, 0, 1258, 17));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
+        menuManage = new QMenu(menubar);
+        menuManage->setObjectName(QString::fromUtf8("menuManage"));
+        menuChatting = new QMenu(menubar);
+        menuChatting->setObjectName(QString::fromUtf8("menuChatting"));
         MainWindow->setMenuBar(menubar);
 
+        toolBar->addAction(actionClientmanager);
+        toolBar->addAction(actionProductmanager);
+        toolBar->addAction(actionShopmanager);
+        toolBar->addSeparator();
         toolBar->addAction(actionChattingServer);
+        toolBar->addAction(actionChattingClient);
         toolBar->addSeparator();
         toolBar->addAction(actionQuit);
         menubar->addAction(menuFile->menuAction());
+        menubar->addAction(menuManage->menuAction());
+        menubar->addAction(menuChatting->menuAction());
         menuFile->addAction(actionQuit);
+        menuManage->addAction(actionClientmanager);
+        menuManage->addAction(actionProductmanager);
+        menuManage->addAction(actionShopmanager);
+        menuChatting->addAction(actionChattingClient);
+        menuChatting->addAction(actionChattingServer);
 
         retranslateUi(MainWindow);
         QObject::connect(actionQuit, &QAction::triggered, MainWindow, qOverload<>(&QMainWindow::close));
@@ -78,9 +126,15 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionQuit->setText(QCoreApplication::translate("MainWindow", "Quit", nullptr));
+        actionChattingClient->setText(QCoreApplication::translate("MainWindow", "ChattingClient", nullptr));
+        actionClientmanager->setText(QCoreApplication::translate("MainWindow", "Clientmanager", nullptr));
+        actionProductmanager->setText(QCoreApplication::translate("MainWindow", "Productmanager", nullptr));
+        actionShopmanager->setText(QCoreApplication::translate("MainWindow", "Shopmanager", nullptr));
         actionChattingServer->setText(QCoreApplication::translate("MainWindow", "ChattingServer", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
+        menuManage->setTitle(QCoreApplication::translate("MainWindow", "Manager", nullptr));
+        menuChatting->setTitle(QCoreApplication::translate("MainWindow", "Chatting", nullptr));
     } // retranslateUi
 
 };

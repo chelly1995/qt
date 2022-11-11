@@ -26,8 +26,12 @@ MainWindow::MainWindow(QWidget *parent)
     chatserverForm = new ChatServerForm(this);
     chatserverForm->setWindowTitle(tr("Chat Server"));
 
+    connect(chatserverForm, &QObject::destroyed, this, [&](QObject* obj){ chatserverForm = nullptr; });
+    connect(clientForm, &QObject::destroyed, this, [&](QObject* obj){ clientForm = nullptr; });
+    connect(shopForm, &QObject::destroyed, this, [&](QObject* obj){ shopForm = nullptr; });
+
     connect(clientForm, SIGNAL(sendClientInfo(int, QString)),shopForm, SLOT(clientComboboxSended(int, QString))); // client이름과 id를 shopForm의 combobox로 가져오기
-      // 텍스트 파일 불러오기
+    // 텍스트 파일 불러오기
 
     connect(productForm, SIGNAL(sendProductInfo(int, QString)),shopForm,SLOT(productComboboxSended(int, QString))); // product 이름과 id를 shopForm의 combobox로 가져오기
 
@@ -54,6 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->mdiArea->addSubWindow(chatserverForm);
     ui->mdiArea->setActiveSubWindow(cw);
 
+    ui->toolBar->setIconSize(QSize(35,35));
 
 }
 
@@ -71,11 +76,58 @@ void MainWindow::on_actionQuit_triggered()
 
 
 
+
+void MainWindow::on_actionChattingClient_triggered()
+{
+    chatclientForm = new ChatClient();
+    chatclientForm->show();
+}
+
+
+void MainWindow::on_actionClientmanager_triggered()
+{
+    if(clientForm == nullptr){
+        clientForm = new ClientManagerForm();
+        ui->mdiArea->addSubWindow(clientForm);
+        clientForm->show();
+        clientForm->loadData();
+        clientForm->setWindowTitle(tr("Client Info"));
+    }
+    clientForm->setFocus();
+}
+
+
+void MainWindow::on_actionProductmanager_triggered()
+{
+    productForm = new ProductManagerForm();
+    productForm->show();
+    productForm->loadData();
+    productForm->setWindowTitle(tr("Product Info"));
+
+}
+
+
+void MainWindow::on_actionShopmanager_triggered()
+{
+    if(shopForm == nullptr) {
+        shopForm = new ShopManagerForm();
+        ui->mdiArea->addSubWindow(shopForm);
+        shopForm->show();
+        shopForm->loadData();
+        shopForm->setWindowTitle(tr("Shop Info"));
+    }
+    shopForm->setFocus();
+}
+
+
 void MainWindow::on_actionChattingServer_triggered()
 {
-    chatclientForm = new ChatClient(this);
-    chatclientForm->show();
-
-    //qDebug()<<"HI";
+    if(chatserverForm == nullptr) {
+        chatserverForm = new ChatServerForm(this);
+        ui->mdiArea->addSubWindow(chatserverForm);
+        chatserverForm->setWindowTitle(tr("Chat Server"));
+        chatserverForm->show();
+    }
+    chatserverForm->setFocus();
 }
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>547</width>
-    <height>403</height>
+    <width>634</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,10 +19,10 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QWidget" name="">
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="clientListLabel">
+        <widget class="QLabel" name="label">
          <property name="text">
           <string>Client List</string>
          </property>
@@ -44,7 +44,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
+     <widget class="QWidget" name="">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QTreeWidget" name="messageTreeWidget">
@@ -85,14 +85,14 @@
          <item>
           <widget class="QPushButton" name="clearPushButton">
            <property name="text">
-            <string>&amp;Clear</string>
+            <string>Clear</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="savePushButton">
            <property name="text">
-            <string>&amp;Save</string>
+            <string>Save</string>
            </property>
           </widget>
          </item>
@@ -105,22 +105,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>clearPushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>messageTreeWidget</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>341</x>
-     <y>385</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>407</x>
-     <y>189</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

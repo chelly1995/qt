@@ -2348,10 +2348,10 @@
         "-fmacro-backtrace-limit=0",
         "-ferror-limit=1000",
         "/TP",
-        "C:\\Work\\qt-master3\\qt-master\\build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug\\ui_shopmanagerform.h"
+        "C:\\Work\\qt-master3\\qt-master\\build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug\\ui_mainwindow.h"
     ],
     "directory": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/.qtc_clangd",
-    "file": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/ui_shopmanagerform.h"
+    "file": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/ui_mainwindow.h"
 },
 {
     "arguments": [
@@ -2562,10 +2562,10 @@
         "-fmacro-backtrace-limit=0",
         "-ferror-limit=1000",
         "/TP",
-        "C:\\Work\\qt-master3\\qt-master\\build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug\\ui_chatserverform.h"
+        "C:\\Work\\qt-master3\\qt-master\\build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug\\ui_shopmanagerform.h"
     ],
     "directory": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/.qtc_clangd",
-    "file": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/ui_chatserverform.h"
+    "file": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/ui_shopmanagerform.h"
 },
 {
     "arguments": [
@@ -2776,9 +2776,9 @@
         "-fmacro-backtrace-limit=0",
         "-ferror-limit=1000",
         "/TP",
-        "C:\\Work\\qt-master3\\qt-master\\build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug\\ui_mainwindow.h"
+        "C:\\Work\\qt-master3\\qt-master\\build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug\\ui_chatserverform.h"
     ],
     "directory": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/.qtc_clangd",
-    "file": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/ui_mainwindow.h"
+    "file": "C:/Work/qt-master3/qt-master/build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/ui_chatserverform.h"
 }
 ]
