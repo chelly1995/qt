@@ -1,4 +1,5 @@
 #include "chatclient.h"
+#include "clientlogthread.h"
 
 #include <QTextEdit>
 #include <QLineEdit>
@@ -16,6 +17,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QProgressDialog>
+#include <QTreeWidget>
 
 #define BLOCK_SIZE      1024
 
@@ -130,11 +132,21 @@ ChatClient::ChatClient(QWidget *parent)
         }
     } );
 
+   // clientlogtreewidget = new QTreeWidget(this);
+
+    clientlogthread = new ClientLogThread(this);
+
+    clientlogthread->start();
+
     setWindowTitle(tr("Chat Client"));
+
+
+
 }
 
 ChatClient::~ChatClient( )
 {
+
     clientSocket->close( );
     QSettings settings("ChatClient", "Chat Client");
     settings.setValue("ChatClient/ID", name->text());
@@ -143,6 +155,7 @@ ChatClient::~ChatClient( )
 /* 창이 닫힐 때 서버에 연결 접속 메시지를 보내고 종료 */
 void ChatClient::closeEvent(QCloseEvent*)
 {
+    clientlogthread->saveData();
     sendProtocol(Chat_LogOut, name->text().toStdString().data());
     clientSocket->disconnectFromHost();
     if(clientSocket->state() != QAbstractSocket::UnconnectedState)
@@ -226,6 +239,30 @@ void ChatClient::sendData(  )
         message->append("<font color=red>나</font> : " + str);
         sendProtocol(Chat_Talk, bytearray.data());
     }
+//    QTreeWidgetItem* item = new QTreeWidgetItem(clientlogtreewidget);     //messageTreeWidget의 정보들을 담을 변수 item을 생성함
+//       item->setText(0, serverAddress->text());                                                   //인덱스 0번은 ip로 설정
+//       item->setText(1, serverPort->text());                                //인덱스 1번은 port로 설정
+//       item->setText(2, name->text());                                 //인덱스 3번은 고객 이름으로 설정
+//       item->setText(3, inputLine->text());                                        //인덱스 4번은 채팅 내용(data)으로 설정
+//       item->setText(4, QDateTime::currentDateTime().toString());              //인덱스 5번은 채팅을 보낸 시간으로 설정
+
+//       clientlogtreewidget->setColumnCount(5);
+
+//           for(int i = 0; i < clientlogtreewidget->columnCount(); i++)
+//               clientlogtreewidget->resizeColumnToContents(i);
+//           clientlogtreewidget->addTopLevelItem(item);
+
+//           clientlogthread->appendData(item);
+
+
+    QString log;
+    log.append(serverAddress->text());
+    log.append(", " + serverPort->text());
+    log.append(", " + name->text());
+    log.append(", " + str);
+    log.append(", " + QDateTime::currentDateTime().toString());
+
+    clientlogthread->appendData(log);
 }
 
 /* 파일 전송시 여러번 나눠서 전송 */

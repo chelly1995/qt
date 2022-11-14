@@ -281,7 +281,7 @@ void ShopManagerForm::on_ProductnameComboBox_textActivated(const QString &arg1) 
 }
 
 
-void ShopManagerForm::on_quantityLineEdit_textChanged(const QString &arg1)
+void ShopManagerForm::on_quantityLineEdit_textChanged(const QString &arg1)      // quantity LineEdit의 텍스트가 바뀌었을 경우
 {
     ui->totalLineEdit->setText(QString::number(arg1.toInt() * ui->priceLineEdit->text().toInt()));
 }

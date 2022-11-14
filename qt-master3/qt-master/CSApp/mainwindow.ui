@@ -40,7 +40,6 @@
    <addaction name="actionProductmanager"/>
    <addaction name="actionShopmanager"/>
    <addaction name="separator"/>
-   <addaction name="actionChattingServer"/>
    <addaction name="actionChattingClient"/>
    <addaction name="separator"/>
    <addaction name="actionQuit"/>
@@ -73,7 +72,6 @@
      <string>Chatting</string>
     </property>
     <addaction name="actionChattingClient"/>
-    <addaction name="actionChattingServer"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuManage"/>
@@ -122,15 +120,6 @@
    </property>
    <property name="text">
     <string>Shopmanager</string>
-   </property>
-  </action>
-  <action name="actionChattingServer">
-   <property name="icon">
-    <iconset>
-     <normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingserver.png</normaloff>../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingserver.png</iconset>
-   </property>
-   <property name="text">
-    <string>ChattingServer</string>
    </property>
   </action>
  </widget>

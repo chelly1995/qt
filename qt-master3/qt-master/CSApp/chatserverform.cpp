@@ -25,6 +25,7 @@ ChatServerForm::ChatServerForm(QWidget *parent) :
     QList<int> sizes;
     sizes << 120 << 500;
     ui->splitter->setSizes(sizes);
+
     chatServer = new QTcpServer(this);
     connect(chatServer, SIGNAL(newConnection( )), SLOT(clientConnect( )));
 
@@ -69,7 +70,8 @@ ChatServerForm::ChatServerForm(QWidget *parent) :
     logThread = new LogThread(this);
     logThread->start();
 
-    connect(ui->savePushButton, SIGNAL(clicked()), logThread, SLOT(saveData()));
+    //connect(ui->savePushButton, SIGNAL(clicked()), logThread, SLOT(saveData()));
+    connect(ui->savePushButton, SIGNAL(clicked()), logThread, SLOT(serversaveData()));
 
     qDebug() << tr("The server is running on port %1.").arg(chatServer->serverPort( ));
 }

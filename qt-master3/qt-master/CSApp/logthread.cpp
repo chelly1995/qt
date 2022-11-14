@@ -16,7 +16,7 @@ LogThread::LogThread(QObject *parent)
 void LogThread::run()
 {
     Q_FOREVER {
-        saveData();
+        serversaveData();
         sleep(60);      // 1분마다 저장
     }
 }
@@ -26,13 +26,15 @@ void LogThread::appendData(QTreeWidgetItem* item)
     itemList.append(item);
 }
 
-void LogThread::saveData()
+void LogThread::serversaveData()
 {
-    if(itemList.count() > 0) {
+    qDebug() << 1;
+    if(itemList.count() >= 0) {
         QFile file(filename);
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-            return;
-
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append)){
+            qDebug() << 2;
+            return;}
+        qDebug() <<3;
         QTextStream out(&file);
         foreach(auto item, itemList) {
             out << item->text(0) << ", ";
@@ -41,6 +43,7 @@ void LogThread::saveData()
             out << item->text(3) << ", ";
             out << item->text(4) << ", ";
             out << item->text(5) << "\n";
+            qDebug()<<item;
         }
         file.close();
     }

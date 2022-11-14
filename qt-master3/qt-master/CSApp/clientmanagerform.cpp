@@ -21,12 +21,12 @@ ClientManagerForm::ClientManagerForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QList<int> sizes;       // client Info 사이즈 조정
+    QList<int> sizes;    // ClientManagerForm 창 크기 조정
     sizes << 640 << 500;
     ui->splitter->setSizes(sizes);
 
-    QAction* removeAction = new QAction(tr("&Remove"));     // Remove 액션 생성
-    connect(removeAction, SIGNAL(triggered()), SLOT(removeItem()));     // remove 버튼을 눌렀을 때 아이템 삭제
+    QAction* removeAction = new QAction(tr("&Remove"));     // REMOVE 액션 생성
+    connect(removeAction, SIGNAL(triggered()), SLOT(removeItem()));     // REMOVE 버튼을 눌렀을 때 아이템 삭제하는 시그널과 슬롯함수 CONNECT
     menu = new QMenu;
     menu->addAction(removeAction);      // 생성된 메뉴에 removeAction 추가
 
@@ -35,7 +35,8 @@ ClientManagerForm::ClientManagerForm(QWidget *parent) :
 
     connect(ui->searchLineEdit, SIGNAL(returnPressed()),
             this, SLOT(on_searchPushButton_clicked()));
-    searchqueryModel = new QStandardItemModel(0, 4);
+
+    searchqueryModel = new QStandardItemModel(0, 4);                // SEARCH 쿼리 모델 생성 및 HEADER 이름 설정
     searchqueryModel->setHeaderData(0, Qt::Horizontal, tr("ID"));
     searchqueryModel->setHeaderData(1, Qt::Horizontal, tr("Name"));
     searchqueryModel->setHeaderData(2, Qt::Horizontal, tr("Phone Number"));
@@ -45,7 +46,7 @@ ClientManagerForm::ClientManagerForm(QWidget *parent) :
 
 
 
-ClientManagerForm::~ClientManagerForm()
+ClientManagerForm::~ClientManagerForm()             // 데이터베이스 저장
 {
     delete ui;
     QSqlDatabase db = QSqlDatabase::database("clientConnection");
@@ -56,9 +57,9 @@ ClientManagerForm::~ClientManagerForm()
     }
 }
 
-int ClientManagerForm::makeId( )    // client ID 생성
+int ClientManagerForm::makeId( )    // Client ID 생성
 {
-    if(clientqueryModel->rowCount() == 0) {   // clientList의 size가 0인 경우 100 반환
+    if(clientqueryModel->rowCount() == 0) {
         return 100;
     } else {
         auto id = clientqueryModel->data(clientqueryModel->index(clientqueryModel->rowCount()-1,0)).toInt(); // clientList의 size가 0이 아닌 경우 clientList의 마지막key값을 id에 저장
@@ -87,11 +88,11 @@ void ClientManagerForm::showContextMenu(const QPoint &pos)
 
 }
 
-void ClientManagerForm::on_searchPushButton_clicked()           // search 버튼 클릭 시
+void ClientManagerForm::on_searchPushButton_clicked()           // SEARCH 버튼 클릭 시,
 {
     searchqueryModel->clear();
 
-    int i = ui->searchComboBox->currentIndex();                 // searchComboBox의 현재 index값을 i에 저장
+    int i = ui->searchComboBox->currentIndex();                 // SEARCH 콤보박스 현재 INDEX 값을 변수 i에 저장
     auto flag = (i)? Qt::MatchCaseSensitive|Qt::MatchContains
                    : Qt::MatchCaseSensitive;
 
@@ -123,7 +124,7 @@ void ClientManagerForm::on_searchPushButton_clicked()           // search 버튼
     }
 }
 
-void ClientManagerForm::on_modifyPushButton_clicked()       // Modify 버튼 클릭 시
+void ClientManagerForm::on_modifyPushButton_clicked()       // MODIFY 버튼 클릭 시
 {
     QModelIndex index = ui->clienttableView->currentIndex();
 
@@ -151,7 +152,7 @@ void ClientManagerForm::on_modifyPushButton_clicked()       // Modify 버튼 클
 
 }
 
-void ClientManagerForm::on_addPushButton_clicked()      // add 버튼 클릭 시
+void ClientManagerForm::on_addPushButton_clicked()      // ADD 버튼 클릭 시
 {
     QString name, number, address;
     int id = makeId( );
@@ -164,7 +165,7 @@ void ClientManagerForm::on_addPushButton_clicked()      // add 버튼 클릭 시
         query.prepare("INSERT INTO client VALUES (?, ?, ?, ?)");
         query.bindValue(0,id);
         query.bindValue(1,name);
-        query.bindValue(2, number);
+        query.bindValue(2,number);
         query.bindValue(3,address);
         query.exec();
         clientqueryModel->select();
@@ -175,18 +176,7 @@ void ClientManagerForm::on_addPushButton_clicked()      // add 버튼 클릭 시
 }
 
 
-
-void ClientManagerForm::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
-{
-    Q_UNUSED(column);
-    ui->idLineEdit->setText(item->text(0));
-    ui->nameLineEdit->setText(item->text(1));
-    ui->phoneNumberLineEdit->setText(item->text(2));
-    ui->addressLineEdit->setText(item->text(3));
-}
-
-
-void ClientManagerForm::loadData()
+void ClientManagerForm::loadData()                  // 데이터 불러오기
 {
 
     QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE","clientConnection");
@@ -217,7 +207,7 @@ void ClientManagerForm::loadData()
 }
 
 
-void ClientManagerForm::clientCIDSended(int id) // CID를 통해 client정보 전달
+void ClientManagerForm::clientCIDSended(int id) // CID를 통해 Client정보 전달
 {
 
     QModelIndexList indexes = clientqueryModel->match(clientqueryModel->index(0, 0), Qt::EditRole, id, -1, Qt::MatchFlags(Qt::MatchCaseSensitive));
@@ -231,7 +221,7 @@ void ClientManagerForm::clientCIDSended(int id) // CID를 통해 client정보 �
 }
 
 
-void ClientManagerForm::on_clienttableView_clicked(const QModelIndex &index)
+void ClientManagerForm::on_clienttableView_clicked(const QModelIndex &index)    // ClientTableView 클릭 시
 {
     QString id = clientqueryModel->data(index.siblingAtColumn(0)).toString();
     QString name = clientqueryModel->data(index.siblingAtColumn(1)).toString();

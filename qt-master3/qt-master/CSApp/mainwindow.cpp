@@ -65,6 +65,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+
 }
 
 
@@ -117,6 +118,7 @@ void MainWindow::on_actionShopmanager_triggered()
         shopForm->setWindowTitle(tr("Shop Info"));
     }
     shopForm->setFocus();
+
 }
 
 

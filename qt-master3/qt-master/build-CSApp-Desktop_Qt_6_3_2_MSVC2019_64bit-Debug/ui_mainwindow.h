@@ -30,7 +30,6 @@ public:
     QAction *actionClientmanager;
     QAction *actionProductmanager;
     QAction *actionShopmanager;
-    QAction *actionChattingServer;
     QWidget *centralwidget;
     QMdiArea *mdiArea;
     QStatusBar *statusbar;
@@ -70,11 +69,6 @@ public:
         QIcon icon4;
         icon4.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Shop.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionShopmanager->setIcon(icon4);
-        actionChattingServer = new QAction(MainWindow);
-        actionChattingServer->setObjectName(QString::fromUtf8("actionChattingServer"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8("../build-CSApp-Desktop_Qt_6_3_2_MSVC2019_64bit-Debug/Chattingserver.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionChattingServer->setIcon(icon5);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         mdiArea = new QMdiArea(centralwidget);
@@ -102,7 +96,6 @@ public:
         toolBar->addAction(actionProductmanager);
         toolBar->addAction(actionShopmanager);
         toolBar->addSeparator();
-        toolBar->addAction(actionChattingServer);
         toolBar->addAction(actionChattingClient);
         toolBar->addSeparator();
         toolBar->addAction(actionQuit);
@@ -114,7 +107,6 @@ public:
         menuManage->addAction(actionProductmanager);
         menuManage->addAction(actionShopmanager);
         menuChatting->addAction(actionChattingClient);
-        menuChatting->addAction(actionChattingServer);
 
         retranslateUi(MainWindow);
         QObject::connect(actionQuit, &QAction::triggered, MainWindow, qOverload<>(&QMainWindow::close));
@@ -130,7 +122,6 @@ public:
         actionClientmanager->setText(QCoreApplication::translate("MainWindow", "Clientmanager", nullptr));
         actionProductmanager->setText(QCoreApplication::translate("MainWindow", "Productmanager", nullptr));
         actionShopmanager->setText(QCoreApplication::translate("MainWindow", "Shopmanager", nullptr));
-        actionChattingServer->setText(QCoreApplication::translate("MainWindow", "ChattingServer", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuManage->setTitle(QCoreApplication::translate("MainWindow", "Manager", nullptr));

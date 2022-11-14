@@ -22,24 +22,20 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ClientManagerForm_t {
-    uint offsetsAndSizes[34];
+    uint offsetsAndSizes[26];
     char stringdata0[18];
     char stringdata1[15];
     char stringdata2[1];
     char stringdata3[17];
-    char stringdata4[26];
-    char stringdata5[17];
-    char stringdata6[5];
-    char stringdata7[7];
-    char stringdata8[16];
-    char stringdata9[11];
-    char stringdata10[25];
-    char stringdata11[28];
-    char stringdata12[28];
-    char stringdata13[16];
-    char stringdata14[27];
-    char stringdata15[12];
-    char stringdata16[6];
+    char stringdata4[16];
+    char stringdata5[11];
+    char stringdata6[25];
+    char stringdata7[28];
+    char stringdata8[28];
+    char stringdata9[16];
+    char stringdata10[27];
+    char stringdata11[12];
+    char stringdata12[6];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_ClientManagerForm_t::offsetsAndSizes) + ofs), len 
@@ -49,28 +45,20 @@ static const qt_meta_stringdata_ClientManagerForm_t qt_meta_stringdata_ClientMan
         QT_MOC_LITERAL(18, 14),  // "sendClientInfo"
         QT_MOC_LITERAL(33, 0),  // ""
         QT_MOC_LITERAL(34, 16),  // "sendClientInform"
-        QT_MOC_LITERAL(51, 25),  // "on_treeWidget_itemClicked"
-        QT_MOC_LITERAL(77, 16),  // "QTreeWidgetItem*"
-        QT_MOC_LITERAL(94, 4),  // "item"
-        QT_MOC_LITERAL(99, 6),  // "column"
-        QT_MOC_LITERAL(106, 15),  // "showContextMenu"
-        QT_MOC_LITERAL(122, 10),  // "removeItem"
-        QT_MOC_LITERAL(133, 24),  // "on_addPushButton_clicked"
-        QT_MOC_LITERAL(158, 27),  // "on_modifyPushButton_clicked"
-        QT_MOC_LITERAL(186, 27),  // "on_searchPushButton_clicked"
-        QT_MOC_LITERAL(214, 15),  // "clientCIDSended"
-        QT_MOC_LITERAL(230, 26),  // "on_clienttableView_clicked"
-        QT_MOC_LITERAL(257, 11),  // "QModelIndex"
-        QT_MOC_LITERAL(269, 5)   // "index"
+        QT_MOC_LITERAL(51, 15),  // "showContextMenu"
+        QT_MOC_LITERAL(67, 10),  // "removeItem"
+        QT_MOC_LITERAL(78, 24),  // "on_addPushButton_clicked"
+        QT_MOC_LITERAL(103, 27),  // "on_modifyPushButton_clicked"
+        QT_MOC_LITERAL(131, 27),  // "on_searchPushButton_clicked"
+        QT_MOC_LITERAL(159, 15),  // "clientCIDSended"
+        QT_MOC_LITERAL(175, 26),  // "on_clienttableView_clicked"
+        QT_MOC_LITERAL(202, 11),  // "QModelIndex"
+        QT_MOC_LITERAL(214, 5)   // "index"
     },
     "ClientManagerForm",
     "sendClientInfo",
     "",
     "sendClientInform",
-    "on_treeWidget_itemClicked",
-    "QTreeWidgetItem*",
-    "item",
-    "column",
     "showContextMenu",
     "removeItem",
     "on_addPushButton_clicked",
@@ -89,7 +77,7 @@ static const uint qt_meta_data_ClientManagerForm[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -97,32 +85,30 @@ static const uint qt_meta_data_ClientManagerForm[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,   74,    2, 0x06,    1 /* Public */,
-       3,    3,   79,    2, 0x06,    4 /* Public */,
+       1,    2,   68,    2, 0x06,    1 /* Public */,
+       3,    3,   73,    2, 0x06,    4 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    2,   86,    2, 0x08,    8 /* Private */,
-       8,    1,   91,    2, 0x08,   11 /* Private */,
-       9,    0,   94,    2, 0x08,   13 /* Private */,
-      10,    0,   95,    2, 0x08,   14 /* Private */,
-      11,    0,   96,    2, 0x08,   15 /* Private */,
-      12,    0,   97,    2, 0x08,   16 /* Private */,
-      13,    1,   98,    2, 0x08,   17 /* Private */,
-      14,    1,  101,    2, 0x08,   19 /* Private */,
+       4,    1,   80,    2, 0x08,    8 /* Private */,
+       5,    0,   83,    2, 0x08,   10 /* Private */,
+       6,    0,   84,    2, 0x08,   11 /* Private */,
+       7,    0,   85,    2, 0x08,   12 /* Private */,
+       8,    0,   86,    2, 0x08,   13 /* Private */,
+       9,    1,   87,    2, 0x08,   14 /* Private */,
+      10,    1,   90,    2, 0x08,   16 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::QString,    2,    2,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    2,    2,    2,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 5, QMetaType::Int,    6,    7,
     QMetaType::Void, QMetaType::QPoint,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 15,   16,
+    QMetaType::Void, 0x80000000 | 11,   12,
 
        0        // eod
 };
@@ -135,14 +121,13 @@ void ClientManagerForm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         switch (_id) {
         case 0: _t->sendClientInfo((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 1: _t->sendClientInform((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
-        case 2: _t->on_treeWidget_itemClicked((*reinterpret_cast< std::add_pointer_t<QTreeWidgetItem*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 3: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
-        case 4: _t->removeItem(); break;
-        case 5: _t->on_addPushButton_clicked(); break;
-        case 6: _t->on_modifyPushButton_clicked(); break;
-        case 7: _t->on_searchPushButton_clicked(); break;
-        case 8: _t->clientCIDSended((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 9: _t->on_clienttableView_clicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
+        case 2: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 3: _t->removeItem(); break;
+        case 4: _t->on_addPushButton_clicked(); break;
+        case 5: _t->on_modifyPushButton_clicked(); break;
+        case 6: _t->on_searchPushButton_clicked(); break;
+        case 7: _t->clientCIDSended((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_clienttableView_clicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -172,7 +157,7 @@ const QMetaObject ClientManagerForm::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_ClientManagerForm_t
 , QtPrivate::TypeAndForceComplete<ClientManagerForm, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QTreeWidgetItem *, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QModelIndex &, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QModelIndex &, std::false_type>
 
 
 >,
@@ -199,13 +184,13 @@ int ClientManagerForm::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 10;
+        _id -= 9;
     }
     return _id;
 }

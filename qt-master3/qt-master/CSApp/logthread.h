@@ -22,7 +22,7 @@ signals:
 
 public slots:
     void appendData(QTreeWidgetItem*);
-    void saveData();
+    void serversaveData();
 
 
 

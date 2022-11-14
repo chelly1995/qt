@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QDataStream>
+#include "clientlogthread.h"
+
 
 class QTextEdit;
 class QLineEdit;
@@ -10,6 +12,7 @@ class QTcpSocket;
 class QPushButton;
 class QFile;
 class QProgressDialog;
+class QTreeWidget;
 
 
 typedef enum {
@@ -61,6 +64,8 @@ private:
     QByteArray outBlock;            // 전송을 위한 데이터
     bool isSent;                    // 파일 서버에 접속되었는지 확인
 
+    QTreeWidget *clientlogtreewidget;
+    ClientLogThread *clientlogthread;
 signals:
 
 };
