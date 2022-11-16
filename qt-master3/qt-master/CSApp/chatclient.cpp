@@ -239,20 +239,6 @@ void ChatClient::sendData(  )
         message->append("<font color=red>나</font> : " + str);
         sendProtocol(Chat_Talk, bytearray.data());
     }
-//    QTreeWidgetItem* item = new QTreeWidgetItem(clientlogtreewidget);     //messageTreeWidget의 정보들을 담을 변수 item을 생성함
-//       item->setText(0, serverAddress->text());                                                   //인덱스 0번은 ip로 설정
-//       item->setText(1, serverPort->text());                                //인덱스 1번은 port로 설정
-//       item->setText(2, name->text());                                 //인덱스 3번은 고객 이름으로 설정
-//       item->setText(3, inputLine->text());                                        //인덱스 4번은 채팅 내용(data)으로 설정
-//       item->setText(4, QDateTime::currentDateTime().toString());              //인덱스 5번은 채팅을 보낸 시간으로 설정
-
-//       clientlogtreewidget->setColumnCount(5);
-
-//           for(int i = 0; i < clientlogtreewidget->columnCount(); i++)
-//               clientlogtreewidget->resizeColumnToContents(i);
-//           clientlogtreewidget->addTopLevelItem(item);
-
-//           clientlogthread->appendData(item);
 
 
     QString log;

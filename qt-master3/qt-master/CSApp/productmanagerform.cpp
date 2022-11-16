@@ -47,7 +47,7 @@ ProductManagerForm::ProductManagerForm(QWidget *parent) :
 
 }
 
-ProductManagerForm::~ProductManagerForm()
+ProductManagerForm::~ProductManagerForm()           // 데이터베이스 저장
 {
     delete ui;
 
@@ -59,7 +59,7 @@ ProductManagerForm::~ProductManagerForm()
     }
 }
 
-int ProductManagerForm::makeId( )
+int ProductManagerForm::makeId( )                   // Porduct ID 생성
 {
     if(productqueryModel->rowCount() == 0) {
         return 200;
@@ -69,7 +69,7 @@ int ProductManagerForm::makeId( )
     }
 }
 
-void ProductManagerForm::removeItem()
+void ProductManagerForm::removeItem()               // 아이템 삭제
 {
     QModelIndex index=ui->producttableView->currentIndex();
 
@@ -87,7 +87,7 @@ void ProductManagerForm::showContextMenu(const QPoint &pos)
         menu->exec(globalPos);
 }
 
-void ProductManagerForm::on_searchPushButton_clicked()
+void ProductManagerForm::on_searchPushButton_clicked()      // SEARCH 버튼 클릭 시
 {
     //ui->searchTreeWidget->clear();
     searchqueryModel->clear();
@@ -121,7 +121,7 @@ void ProductManagerForm::on_searchPushButton_clicked()
     }
 }
 
-void ProductManagerForm::on_modifyPushButton_clicked()
+void ProductManagerForm::on_modifyPushButton_clicked()              // Modify 버튼 클릭 시
 {
     QModelIndex index = ui->producttableView->currentIndex();
 
@@ -147,7 +147,7 @@ void ProductManagerForm::on_modifyPushButton_clicked()
 
 }
 
-void ProductManagerForm::on_addPushButton_clicked()
+void ProductManagerForm::on_addPushButton_clicked()         // ADD 버튼 클릭 시
 {
     QString productName, price, quantity;
     int id = makeId( );
@@ -173,7 +173,7 @@ void ProductManagerForm::on_addPushButton_clicked()
 }
 
 
-void ProductManagerForm::loadData()
+void ProductManagerForm::loadData()                     // 데이터 불러오기
 {
 
     QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE","productConnection");
@@ -204,7 +204,7 @@ void ProductManagerForm::loadData()
     }
 }
 
-void ProductManagerForm::productPIDSended(int id)
+void ProductManagerForm::productPIDSended(int id)               // PID를 통해 Product 정보 전달
 {
 
     QModelIndexList indexes = productqueryModel->match(productqueryModel->index(0, 0), Qt::EditRole, id, -1, Qt::MatchFlags(Qt::MatchCaseSensitive));
@@ -218,7 +218,7 @@ void ProductManagerForm::productPIDSended(int id)
     }
 }
 
-void ProductManagerForm::on_producttableView_clicked(const QModelIndex &index)
+void ProductManagerForm::on_producttableView_clicked(const QModelIndex &index)  // producttableView 클릭 시
 {
     QString id = productqueryModel->data(index.siblingAtColumn(0)).toString();
     QString productname = productqueryModel->data(index.siblingAtColumn(1)).toString();
