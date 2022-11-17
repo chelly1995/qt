@@ -89,7 +89,7 @@ void ShopManagerForm::showContextMenu(const QPoint &pos)
         menu->exec(globalPos);
 }
 
-void ShopManagerForm::on_searchPushButton_clicked()     // search 버튼 클릭
+void ShopManagerForm::on_searchPushButton_clicked()     // Search 버튼 클릭
 {
     searchqueryModel->clear();
     //ui->searchTreeWidget->clear();
@@ -129,7 +129,7 @@ void ShopManagerForm::on_searchPushButton_clicked()     // search 버튼 클릭
     }
 }
 
-void ShopManagerForm::on_modifyPushButton_clicked()
+void ShopManagerForm::on_modifyPushButton_clicked()     // Modify 버튼 클릭 시
 {
 
     QModelIndex index = ui->shoptableView->currentIndex();
@@ -160,7 +160,7 @@ void ShopManagerForm::on_modifyPushButton_clicked()
     }
 }
 
-void ShopManagerForm::on_addPushButton_clicked()
+void ShopManagerForm::on_addPushButton_clicked()        // Add 버튼 클릭 시
 {
     QString name, productname, price, quantity;
     int id = makeId( );
@@ -193,7 +193,7 @@ void ShopManagerForm::on_addPushButton_clicked()
 
 
 
-void ShopManagerForm:: loadData()
+void ShopManagerForm:: loadData()       // 데이터 불러오기
 {
     QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE","shopConnection");
     db.setDatabaseName("shop.db");
@@ -243,7 +243,7 @@ void ShopManagerForm::ClientInformSended(QString name, QString phonenumber, QStr
 
 }
 
-void ShopManagerForm::ProductInformSended(QString productname, QString price, QString stock)    // product 트리 위젯에 상품정보(상품이름, 가격, 재고량) 출력
+void ShopManagerForm::ProductInformSended(QString productname, QString price, QString stock)    // Product 트리 위젯에 상품정보(상품이름, 가격, 재고량) 출력
 {
     qDebug() << productname;
     qDebug() << price;
@@ -255,14 +255,14 @@ void ShopManagerForm::ProductInformSended(QString productname, QString price, QS
     item->setText(2, stock);
     ui->producttreeWidget->addTopLevelItem(item);
 
-    ui->priceLineEdit->setText(price);         // priceLineEdit에 가격 자동으로 불러오기
+    ui->priceLineEdit->setText(price);         // PriceLineEdit에 가격 자동으로 불러오기
 
 }
 
 
 
 
-void ShopManagerForm::on_ClientnameComboBox_textActivated(const QString &arg1)  // client 콤보박스 클릭 시
+void ShopManagerForm::on_ClientnameComboBox_textActivated(const QString &arg1)  // Client 콤보박스 클릭 시
 {
 
     qDebug() << arg1;
@@ -272,7 +272,7 @@ void ShopManagerForm::on_ClientnameComboBox_textActivated(const QString &arg1)  
 }
 
 
-void ShopManagerForm::on_ProductnameComboBox_textActivated(const QString &arg1) // product 콤보박스 클릭 시
+void ShopManagerForm::on_ProductnameComboBox_textActivated(const QString &arg1) // Product 콤보박스 클릭 시
 {
     qDebug() << arg1;
     qDebug() << arg1.right(4).left(3).toInt();
@@ -281,13 +281,13 @@ void ShopManagerForm::on_ProductnameComboBox_textActivated(const QString &arg1) 
 }
 
 
-void ShopManagerForm::on_quantityLineEdit_textChanged(const QString &arg1)      // quantity LineEdit의 텍스트가 바뀌었을 경우
+void ShopManagerForm::on_quantityLineEdit_textChanged(const QString &arg1)      // Quantity LineEdit의 텍스트가 바뀌었을 경우
 {
     ui->totalLineEdit->setText(QString::number(arg1.toInt() * ui->priceLineEdit->text().toInt()));
 }
 
 
-void ShopManagerForm::on_shoptableView_clicked(const QModelIndex &index)
+void ShopManagerForm::on_shoptableView_clicked(const QModelIndex &index)    // ShopTableView를 클릭했을 경우
 {
 
     QString id = shopqueryModel->data(index.siblingAtColumn(0)).toString();

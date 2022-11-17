@@ -1,6 +1,5 @@
 #include "productmanagerform.h"
 #include "ui_productmanagerform.h"
-#include "productitem.h"
 
 #include <QFile>
 #include <QMenu>
