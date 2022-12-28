@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/copy.png</file>
+        <file>images/cut.png</file>
+        <file>images/new.png</file>
+        <file>images/open.jpg</file>
+        <file>images/paste.png</file>
+        <file>images/print.jpg</file>
+        <file>images/quit.png</file>
+        <file>images/redo.jpg</file>
+        <file>images/save.png</file>
+        <file>images/saveas.png</file>
+        <file>images/undo.jpg</file>
+        <file>images/alignCenter.png</file>
+        <file>images/alignJustify.png</file>
+        <file>images/alignLeft.png</file>
+        <file>images/alignRight.png</file>
+        <file>images/cascade.jpg</file>
+        <file>images/color.png</file>
+        <file>images/font.png</file>
+        <file>images/help.png</file>
+        <file>images/helpas.png</file>
+        <file>images/next.png</file>
+        <file>images/prev.png</file>
+        <file>images/tile.png</file>
+        <file>images/zoomIn.png</file>
+        <file>images/zoomOut.png</file>
+        <file>images/close.png</file>
+        <file>images/closeAll.jpg</file>
+    </qresource>
+</RCC>
