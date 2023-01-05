@@ -19,25 +19,20 @@ public:
     ~MainWindow();
 
 public slots:
-//    void circle();
-//    void triangle();
-//    void rectangle();
+
 
 private slots:
+       // void LoadPushButton_clicked();
+        //void on_imageLoad_clicked();
 
-
-    //void on_ShapeButton_triggered(QAction *arg1);
+        void on_LoadButton_clicked();
 
 private:
 
-  //  void createActions();
+    QMenu* shapemenu;
+    QMenu* sharpeningmenu;
 
-
-//    QAction* circleAction;
-//    QAction* triangleAction;
-//    QAction* rectangleAction;
-
-    QMenu* menu;
+    QString mResourceDir;
 
     Ui::MainWindow *ui;
 };
