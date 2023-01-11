@@ -52,7 +52,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/shape1.png</normaloff>../../../Users/KOSA/Downloads/shape1.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/shape1.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/shape1.png</iconset>
          </property>
         </widget>
        </item>
@@ -63,7 +63,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/arrow1.png</normaloff>../../../Users/KOSA/Downloads/arrow1.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/arrow.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/arrow.png</iconset>
          </property>
         </widget>
        </item>
@@ -74,7 +74,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/text.png</normaloff>../../../Users/KOSA/Downloads/text.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/text.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/text.png</iconset>
          </property>
         </widget>
        </item>
@@ -85,7 +85,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/ruler.png</normaloff>../../../Users/KOSA/Downloads/ruler.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/ruler.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/ruler.png</iconset>
          </property>
         </widget>
        </item>
@@ -96,7 +96,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/tapemeasure.png</normaloff>../../../Users/KOSA/Downloads/tapemeasure.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/tapemeasure.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/tapemeasure.png</iconset>
          </property>
         </widget>
        </item>
@@ -107,7 +107,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/protractor.png</normaloff>../../../Users/KOSA/Downloads/protractor.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/protractor.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/protractor.png</iconset>
          </property>
         </widget>
        </item>
@@ -124,7 +124,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/contrast.png</normaloff>../../../Users/KOSA/Downloads/contrast.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/contrast.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/contrast.png</iconset>
          </property>
         </widget>
        </item>
@@ -135,7 +135,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/colorinvert.png</normaloff>../../../Users/KOSA/Downloads/colorinvert.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/colorinvert.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/colorinvert.png</iconset>
          </property>
         </widget>
        </item>
@@ -146,7 +146,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/sharpening2.png</normaloff>../../../Users/KOSA/Downloads/sharpening2.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/sharpening.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/sharpening.png</iconset>
          </property>
         </widget>
        </item>
@@ -169,7 +169,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/memo2.png</normaloff>../../../Users/KOSA/Downloads/memo2.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/memo.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/memo.png</iconset>
          </property>
         </widget>
        </item>
@@ -180,7 +180,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../Users/KOSA/Downloads/keyboard.png</normaloff>../../../Users/KOSA/Downloads/keyboard.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/keyboard2.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/keyboard2.png</iconset>
          </property>
         </widget>
        </item>
@@ -336,7 +336,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../build-project1-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/color.png</normaloff>../build-project1-Desktop_Qt_6_4_1_MSVC2019_64bit-Debug/color.png</iconset>
+           <normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/color.png</normaloff>../build-project1-Desktop_Qt_6_3_2_MinGW_64_bit-Debug/color.png</iconset>
          </property>
         </widget>
        </item>
@@ -397,7 +397,7 @@
      <x>0</x>
      <y>0</y>
      <width>1216</width>
-     <height>17</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

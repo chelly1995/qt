@@ -37,6 +37,9 @@ MainWindow::MainWindow(QWidget *parent)
     shapemenu->addAction("triangle")->setIcon(QIcon("triangle.png"));
     //shapemenu->addAction("rectangle")->setIcon(QIcon("rectangle.png"));
 
+
+
+
     sharpeningmenu = new QMenu(this);
     sharpeningmenu ->addAction("circle")->setIcon(QIcon("circle.png"));
     sharpeningmenu ->addAction("triangle")->setIcon(QIcon("triangle.png"));
@@ -141,7 +144,7 @@ void MainWindow::circle()
     circleItem->setFlag(QGraphicsItem::ItemIsSelectable);
     circleItem->setPen(mPen);
     circleItem->setBrush(QBrush(Qt::NoBrush));
-
+    circleItem->setScale(0.7);
 
     scene->addItem(circleItem);
 
