@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -7,50 +6,10 @@
 #include <QDebug>
 #include <QMenu>
 #include <QAction>
-
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
-
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-public slots:
-    void circle();
-    void triangle();
-    void rectangle();
-
-private slots:
-        void on_LoadButton_clicked();
-
-private:
-
-    QMenu* shapemenu;
-    QMenu* sharpeningmenu;
-
-    QAction* circleAction;
-    QAction* triangleAction;
-    QAction* rectangleAction;
-
-
-    QString mResourceDir;
-
-    Ui::MainWindow *ui;
-};
-#endif // MAINWINDOW_H
-=======
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-
-#include <QMainWindow>
-#include <QToolButton>
-#include <QDebug>
-#include <QMenu>
+#include <QGraphicsItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QDialog>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -73,14 +32,23 @@ private slots:
 
         void on_LoadButton_clicked();
 
+        void circle();
+        void triangle();
+        void rectangle();
+
 private:
 
     QMenu* shapemenu;
     QMenu* sharpeningmenu;
 
+    QAction* circleAction;
+    QAction* triangleAction;
+    QAction* rectangleAction;
+
     QString mResourceDir;
+
+    QGraphicsScene*scene;
 
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
->>>>>>> f905857853186c7457fc043aad79a03cdbaf0cc4
